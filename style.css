@@ -1,0 +1,61 @@
+html {
+	background: rgb(45, 45, 45);
+	font-family: 'Open Sans', sans-serif;
+	color: #fff;
+}
+
+#navbar{
+	margin-top:10px;
+}
+.menu:first-child {
+	background: #4285F4;
+}
+
+.menu:nth-child(2) {
+	background: #DB4437;
+}
+
+.menu:nth-child(3) {
+	background: #F4B400;
+}
+
+.menu:nth-child(4) {
+	background: #0F9D58;
+}
+
+.menu {
+	width: 23%;
+	padding: 10px 0;
+	float: left;
+	margin: 0 1%;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+#profile {
+	position: absolute;
+	left: 40%;
+	top: 40%;
+	height: 40%;
+	width: 20%;
+	text-align: center;
+	font-size: 1vw;
+}
+
+img {
+	max-width: 10vw;
+	min-width: 5vw;
+	border-radius: 50%;
+}
+
+#content{
+	position:absolute;
+	top:15%;
+	left:30%;
+	height:1px;
+	width:60%;
+	border-radius:1vw;
+	background:#4285F4;
+}
