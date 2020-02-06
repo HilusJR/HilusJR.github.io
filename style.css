@@ -30,6 +30,7 @@ html {
 	margin: 0 1%;
 	text-align: center;
 	font-weight: bold;
+	font-size:2vh;
 	border-radius: 20px;
 	cursor: pointer;
 }
@@ -61,8 +62,9 @@ img {
 	background:#4285F4;
 }
 
+/* TABLETS */
 @media only screen and (max-width:800px) {
-	/* For tablets: */
+	
 	#profile {
 	  width: 40%;
 	}
@@ -71,12 +73,18 @@ img {
 	}
   }
 
+  /* MONILE PHONES */
 @media only screen and (max-width:500px) {
-	/* For mobile phones: */
+	
+	.menu{
+		font-size:3vw;
+	}
 	#profile {
-	  width: 100%;
+		left:35%;
+	  	min-width: 30%;
+	  	font-size: 3vw;
 	}
 	img{
-		width: 80%;
+		width: 100%;
 	}
   }
