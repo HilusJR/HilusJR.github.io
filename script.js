@@ -1,14 +1,16 @@
 $('document').ready(function () {
     $('#content').hide();
     $('.menu').click(function () {
+        $('#content').hide();
+        $('#content').css('top','20%');
         $('#profile').animate({
             top: '15%',
             left: '3%'
         }, 500);
         $('#content').css('background',$(this).css('background'));
-        $('#content').fadeIn(0);
+        $('#content').fadeIn({queue: false, duration: '300ms'});
         $('#content').animate({
-            height: '70%'
-        }, 700);
+            top: '15%'
+        }, 300);
     });
 });
