@@ -66,4 +66,7 @@ img {
 	#profile {
 	  width: 100%;
 	}
+	img{
+		max-width: 50vw;
+	}
   }
