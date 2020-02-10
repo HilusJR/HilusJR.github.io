@@ -82,4 +82,40 @@ $('document').ready(function () {
             }, 300);
         }
     });
+    $('#container').click('on', function (event) {
+        if (event.target == event.currentTarget) {
+            var pos = $('#profile')[0].style.left;
+            $('#content').css('top', '15%');
+            if (pos == '40%') {
+                $('#profile').animate({
+                    top: '15%',
+                    left: '3%'
+                }, 300);
+            } else {
+                $('#profile').animate({
+                    top: '41.5%',
+                    left: '41.5%',
+                }, 500);
+                $('#profile').animate({
+                    top: '39%',
+                    left: '39%',
+                }, 300);
+                $('#profile').animate({
+                    top: '40.5%',
+                    left: '40.5%',
+                }, 300);
+                $('#profile').animate({
+                    top: '40%',
+                    left: '40%'
+                }, 300);
+            }
+            $('#content').fadeOut({
+                queue: false,
+                duration: '300ms'
+            });
+            $('#content').animate({
+                top: '20%'
+            }, 300);
+        }
+    });
 });
