@@ -49,9 +49,21 @@ $('document').ready(function () {
         } else {
             $('#content').css('top', '20%');
             $('#profile').animate({
+                top: '13.5%',
+                left: '1.5%',
+            }, 500);
+            $('#profile').animate({
+                top: '16%',
+                left: '4%',
+            }, 300);
+            $('#profile').animate({
+                top: '14.5%',
+                left: '2.5%',
+            }, 300);
+            $('#profile').animate({
                 top: '15%',
                 left: '3%'
-            }, 500);
+            }, 300);
             $('#content').css('background', $(this).css('background'));
             $('#content').fadeIn({
                 queue: false,
