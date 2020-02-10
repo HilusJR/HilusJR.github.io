@@ -2,8 +2,8 @@ $('document').ready(function () {
     $('#content').hide();
     $('.menu').click(function () {
         $('#content').hide();
-        
-        //For Mobile Phones
+
+        // PROFILE STARTING ANIMATION FOR MOBILE DEVICES
         if ($(window).width() <= '500') {
             $('#content').css('top', '20%');
             $('#profile').animate({
@@ -24,7 +24,7 @@ $('document').ready(function () {
                 top: '35%'
             }, 300);
 
-            //For Tablets
+            // PROFILE STARTING ANIMATION FOR TABLETS
         } else if ($(window).width() <= '800') {
             $('#content').css('top', '20%');
             $('#profile').animate({
@@ -45,7 +45,7 @@ $('document').ready(function () {
                 top: '35%'
             }, 300);
 
-            //For any other device
+            // PROFILE STARTING ANIMATION FOR ABY OTHER DEVICE
         } else {
             var pos = $('#profile')[0].style.left;
             $('#content').css('top', '20%');
@@ -78,12 +78,20 @@ $('document').ready(function () {
                 duration: '300ms'
             });
             $('#content').animate({
+                top: '14%'
+            }, 200);
+            $('#content').animate({
+                top: '15.5%'
+            }, 200);
+            $('#content').animate({
                 top: '15%'
             }, 200);
         }
     });
+
+    // RESETING ANIMATION WHEN CLICKED ON BACKGROUND
     $('#container').click('on', function (event) {
-        if (event.target == event.currentTarget) {
+        if (event.target == event.currentTarget && $(window).width() > '500') {
             var pos = $('#profile')[0].style.left;
             $('#content').css('top', '15%');
             if (pos == '40%') {
@@ -109,6 +117,18 @@ $('document').ready(function () {
                     left: '40%'
                 }, 200);
             }
+            $('#content').fadeOut({
+                queue: false,
+                duration: '300ms'
+            });
+            $('#content').animate({
+                top: '20%'
+            }, 200);
+        } else if (event.target == event.currentTarget && $(window).width() <= '500') { // FOR MOBILE DEVICES
+            $('#profile').animate({
+                top: '40%',
+                left: '35%'
+            }, 400);
             $('#content').fadeOut({
                 queue: false,
                 duration: '300ms'
