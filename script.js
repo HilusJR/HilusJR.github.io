@@ -88,8 +88,8 @@ $('document').ready(function () {
             $('#content').css('top', '15%');
             if (pos == '40%') {
                 $('#profile').animate({
-                    top: '15%',
-                    left: '3%'
+                    top: '40%',
+                    left: '40%'
                 }, 300);
             } else {
                 $('#profile').animate({
