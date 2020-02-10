@@ -7,21 +7,22 @@ $('document').ready(function () {
         if ($(window).width() <= '500') {
             $('#content').css('top', '20%');
             $('#profile').animate({
-                top: '10%',
+                top: '9%',
             }, 500);
             $('#content').css({
                 'background': 'rgb(45,45,45)',
                 'width': '90%',
-                'height': '60%',
+                'height': '59%',
                 'top': '40%',
-                'left': '5%'
+                'left': '5%',
+                'box-shadow': 'none'
             });
             $('#content').fadeIn({
                 queue: false,
                 duration: '300ms'
             });
             $('#content').animate({
-                top: '35%'
+                top: '36%'
             }, 300);
 
             // PROFILE STARTING ANIMATION FOR TABLETS
@@ -134,7 +135,7 @@ $('document').ready(function () {
                 duration: '300ms'
             });
             $('#content').animate({
-                top: '20%'
+                top: '40%'
             }, 200);
         }
     });
