@@ -2,7 +2,7 @@ $('document').ready(function () {
     $('#content').hide();
     $('.menu').click(function () {
         $('#content').hide();
-
+        
         //For Mobile Phones
         if ($(window).width() <= '500') {
             $('#content').css('top', '20%');
@@ -58,19 +58,19 @@ $('document').ready(function () {
                 $('#profile').animate({
                     top: '13.5%',
                     left: '1.5%',
-                }, 500);
+                }, 300);
                 $('#profile').animate({
                     top: '16%',
                     left: '4%',
-                }, 300);
+                }, 200);
                 $('#profile').animate({
                     top: '14.5%',
                     left: '2.5%',
-                }, 300);
+                }, 200);
                 $('#profile').animate({
                     top: '15%',
                     left: '3%'
-                }, 300);
+                }, 200);
             }
             $('#content').css('background', $(this).css('background'));
             $('#content').fadeIn({
@@ -79,7 +79,7 @@ $('document').ready(function () {
             });
             $('#content').animate({
                 top: '15%'
-            }, 300);
+            }, 200);
         }
     });
     $('#container').click('on', function (event) {
@@ -90,24 +90,24 @@ $('document').ready(function () {
                 $('#profile').animate({
                     top: '40%',
                     left: '40%'
-                }, 300);
+                }, 0);
             } else {
                 $('#profile').animate({
                     top: '41.5%',
                     left: '41.5%',
-                }, 500);
+                }, 300);
                 $('#profile').animate({
                     top: '39%',
                     left: '39%',
-                }, 300);
+                }, 200);
                 $('#profile').animate({
                     top: '40.5%',
                     left: '40.5%',
-                }, 300);
+                }, 200);
                 $('#profile').animate({
                     top: '40%',
                     left: '40%'
-                }, 300);
+                }, 200);
             }
             $('#content').fadeOut({
                 queue: false,
@@ -115,7 +115,7 @@ $('document').ready(function () {
             });
             $('#content').animate({
                 top: '20%'
-            }, 300);
+            }, 200);
         }
     });
 });
