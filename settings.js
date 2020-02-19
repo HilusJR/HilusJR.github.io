@@ -8,7 +8,7 @@ $('document').ready(function () {
     $("#settings").click(function () {
         $(this).animate({
             top: '200px',
-            left: '455px',
+            marginLeft: '-500px',
             width: '1000px',
             height: '600px',
             fontSize: '30px',
@@ -22,7 +22,7 @@ $('document').ready(function () {
     $('#close_settings').click(function () {
         $('#settings').animate({
             top: '10px',
-            left: '905px',
+            marginLeft: '-50px',
             width: '100px',
             height: '20px',
             fontSize: '20px',
