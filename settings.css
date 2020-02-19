@@ -2,12 +2,8 @@
     position:absolute;
     top:10px;
     left:50%;
-    height:20px;
-    margin-left:-50px;
-    font-size:20px;
     text-align:center;
-    padding-top:5px;
-    padding-bottom:5px;
+    padding-top:5px 0;
     background:#fff;
     border-radius:16px;
     box-shadow:2px 2px 5px #000;
@@ -18,11 +14,17 @@
 @media (min-aspect-ratio: 16/9) {
     #settings{
         width:100px;
+        margin-left:-50px;
+        height:20px;
+        font-size:20px;
     }
 }
 @media (max-aspect-ratio: 1/1) {
     #settings{
-        width:100px;
+        width:300px;
+        margin-left:-150px;
+        height:50px;
+        font-size:40px;
     }
 }
 #close_settings{
