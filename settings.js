@@ -7,8 +7,9 @@ $('document').ready(function () {
     $('#settings_list, #setting_options, #close_settings').hide();
     $("#settings").click(function () {
         $(this).animate({
-            top: '200px',
+            top: '50%',
             marginLeft: '-500px',
+            marginTop: '-300px',
             width: '1000px',
             height: '600px',
             fontSize: '30px',
@@ -23,6 +24,7 @@ $('document').ready(function () {
         $('#settings').animate({
             top: '10px',
             marginLeft: '-50px',
+            marginTop: '0px',
             width: '100px',
             height: '20px',
             fontSize: '20px',
