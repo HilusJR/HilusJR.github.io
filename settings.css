@@ -20,7 +20,7 @@
         width:100px;
     }
 }
-@media (max-aspect-ratio: 9/18) {
+@media (max-aspect-ratio: 1/1) {
     #settings{
         width:100px;
     }
