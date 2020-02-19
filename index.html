@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hilus | Piotr Hilicki</title>
-	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=latin-ext"
-		rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-</head>
-
-<body>
-	<div id='container'>
-		<div id='navbar'>
-			<div class='menu'>WHATEVER</div>
-			<div class='menu'>PROJECTS</div>
-			<div class='menu'>ABOUT</div>
-			<div class='menu'>CONTACT</div>
-		</div>
-		<div id='profile'>
-			<img src='img/profile.jpg' />
-			</br></br>Piotr Hilicki / Hilus
-		</div>
-		<div id='content' style='display:none;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius
-			hendrerit metus eu vehicula. Aenean laoreet iaculis mauris, quis condimentum leo pellentesque eget. Donec
-			condimentum purus at nunc facilisis, ac malesuada mauris laoreet. Duis facilisis mi a nisl pellentesque,
-			lobortis consectetur ligula tempus. Quisque turpis metus, aliquet condimentum congue a, consectetur a dolor.
-			Nunc tempor volutpat felis nec hendrerit. Cras convallis vestibulum faucibus. Vivamus a ligula vel erat
-			accumsan tincidunt.
-
-			Fusce nec justo vitae velit convallis auctor. In dui sem, laoreet vel congue vel, vestibulum consectetur
-			massa. Donec in nisi accumsan, imperdiet nisl a, porttitor neque. Donec eu sapien lobortis, elementum libero
-			quis, tincidunt neque. Quisque ut justo quis neque semper commodo. Maecenas ac porta diam. Ut urna mi,
-			imperdiet dictum luctus vel, tincidunt eget elit. Fusce ac viverra odio, eget tempus libero. Cras libero
-			augue, fringilla et aliquet at, interdum non enim. Nunc egestas consectetur sapien sed vestibulum.
-
-			Cras et nibh interdum, tincidunt eros vitae, commodo lectus. Aliquam et odio molestie, mollis magna non,
-			commodo quam. Sed et ligula a purus dignissim fringilla. Sed purus massa, interdum et turpis a, vehicula
-			hendrerit quam. Aenean aliquam vehicula mauris sit amet luctus. Donec eu posuere diam, eu convallis lectus.
-			Phasellus congue porttitor justo et convallis. Fusce dictum aliquam ornare. Aliquam vehicula enim et justo
-			sagittis, non consectetur elit feugiat. Proin iaculis sagittis porta. Aenean et purus vel nisl faucibus
-			dignissim. Pellentesque non urna sit amet nisi placerat vestibulum semper quis ligula. Phasellus at velit
-			turpis. Nunc commodo facilisis purus, id sagittis neque eleifend eu.
-		</div>
-	</div>
-</body>
-
+    <head>
+        <title>HilusOS UI</title>
+        <link rel="stylesheet" type="text/css" href="status.css">
+        <link rel="stylesheet" type="text/css" href="dock.css">
+        <link rel="stylesheet" type="text/css" href="frames.css">
+        <link rel="stylesheet" type="text/css" href="settings.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>$( function() {
+            $( ".window" ).draggable( { handle: ".draggable_bar" },{ containment: "body", scroll: false });});</script>
+        <script type="text/javascript" src="js.js"></script>
+        <script type="text/javascript" src="settings.js"></script>
+    </head>
+    <body onload="time()">
+        <div id="status">
+            <div id="clock"></div>
+            <div id="date"></div>
+            <div id="alert">No notifications, just this blank space.</br>You may rest now</div>
+        </div>
+        
+        <div id='close_settings'>x</div>
+        <div id="settings">Settings
+            <div id="settings_list">
+                <div class="setting">Customization</div>
+                <div class="setting">About</div>
+            </div>
+                <div id="setting_options"></div>
+        </div>
+        
+        <div id="appdrawerbar">
+                <div id="notepad_ic" class="ic">N</div>
+                <div id="log_ic" class="ic">L</div>
+                <div id="kuczner_ic" class="ic">K</div>
+                <div id="player_ic" class="ic">M</div>
+        </div>
+        <!--<iframe src="welcome_screen/ws.html" class="aframe"></iframe>-->
+        <div id="notes" class="window" style="display:none;"></div>
+        <div id="log" class="window" style="display:none;"></div>
+        <div id="kuczner" class="window" style="display:none;"></div>
+        <div id="player" class="window" style="display:none;"></div>
+    </body>
 </html>

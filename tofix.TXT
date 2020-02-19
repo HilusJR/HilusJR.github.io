@@ -1,0 +1,9 @@
+//TO FIX
+status bar visible elements 
+overlaying window apps
+editing notes doesnt change note if not empty
+
+//TO DO
+resizeable windows
+info contents
+add feedback to clicking on some of the elements

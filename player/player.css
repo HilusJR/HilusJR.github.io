@@ -1,0 +1,76 @@
+html{
+    background:#fff;
+    font-family:'Arial';
+}
+#p{
+    position:absolute;
+    top:0;
+    left:0;
+    height:30px;
+    width:100%;
+    padding-top:10px;
+    font-size:20px;
+    text-align:center;
+    box-shadow:2px 0px 5px black;
+    z-index:1;
+}
+#player{
+    position:absolute;
+    top:40px;
+    left:0;
+    color:#fff;
+    height:250px;
+    width:100%;
+    text-align:center;
+    background: linear-gradient(to bottom right, rgb(164, 222, 255), #0073e6);
+}
+#title{
+    margin-top:20px;
+    font-size:30px;
+    font-weight:bold;
+}
+#author{
+    margin-top:20px;
+    font-size:20px;
+    opacity:0.7;
+}
+#album{
+    margin-top:10px;
+    font-size:20px;
+    opacity:0.7;
+}
+#btns{
+    height:50px;
+    margin:0 auto;
+    width:165px;
+    margin-top:60px;
+}
+.btn{
+    height:40px;
+    padding-top:10px;
+    margin-right:5px;
+    width:50px;
+    font-size:30px;
+    background: linear-gradient(to bottom right, #0073e6, rgb(164, 222, 255));
+    border-radius:30px;
+    cursor:pointer;
+    float:left;
+}
+
+#list{
+    position:absolute;
+    top:290px;
+    left:0;
+    width:100%;
+    z-index:1;
+    padding-top:10px;
+    box-shadow: 0 -5px 5px -5px #000;
+}
+.position{
+    height:20px;
+    padding:10px;
+    font-size:20px;
+    margin:5px 10px 0 10px;
+    border-radius:10px;
+    cursor:pointer;
+}
