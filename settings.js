@@ -105,7 +105,7 @@ $('document').ready(function () {
                     'most suitable for my abilities. This project made me find so much joy just by programming, visualising and designing something personal. </br>' +
                     'I have learned a lot since I started, maybe not even close to what professionals can do, but still I am happy with what I achieved.</br></br>' +
                     'Project is not finished, it may not be ever. There are always new things to add. If you happen to be reading this and have an idea, suggestion, found bug or just want to contact me ' +
-                    'feel free to contact me at: </br></br>pietrzef@gmail.com'
+                    'feel free to contact me at: </br></br>pietrzef@gmail.com</br></br>App developers:</br>Hilus:</br>- Notes</br>- Log</br>- Player</br></br>Kuczner</br>- Calculator'
                 );
                 break;
         }

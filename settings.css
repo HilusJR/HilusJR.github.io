@@ -40,6 +40,7 @@
     font-size: 20px;
     height: 530px;
     text-align: left;
+    overflow: scroll;
 }
 
 .setting {
@@ -119,4 +120,8 @@
         width:680px;
         font-size: 40px;
     }
+}
+::-webkit-scrollbar {
+	width: 0;
+	height: 0;
 }
