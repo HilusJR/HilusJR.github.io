@@ -14,9 +14,10 @@
 #close_settings {
     position: absolute;
     top: -5px;
-    left: 905px;
+    left: 50%;
     height: 20px;
     width: 100px;
+    margin-left:-50px;
     text-align: center;
     font-size: 20px;
     background: #fff;
