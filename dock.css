@@ -1,10 +1,11 @@
 /* ELEMENTS OF DOCK (#appdrawerbar) */
 #appdrawerbar{
-    width:32px;
-    height:32px;
     position:absolute;
     bottom:10px;
-    left:944px;
+    left:50%;
+    margin-left:-16px;
+    width:32px;
+    height:32px;
     background:#fff;
     transition-duration:.5s;
     border-radius:16px;

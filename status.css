@@ -62,7 +62,7 @@ body{
     }
     #status:hover{
         width:460px;
-        height:500px;
+        height:90vh;
         padding:20px;
     }
     #status:hover >#clock{
@@ -93,13 +93,16 @@ body{
         font-size:50px;
         padding:5px 0;
     }
+    #alert{
+        width:100%;
+    }
     #status:hover{
         width:97%;
         height:50vh;
         border-radius: 30px;
     }
     #status:hover >#clock{
-        font-size:40px;
+        font-size:80px;
     }
     #status:hover >#date{
         color:rgb(46, 46, 45);
@@ -110,4 +113,5 @@ body{
         opacity:1;
         width:460px;
     }
+
 }
