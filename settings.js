@@ -82,8 +82,8 @@ $('document').ready(function () {
 
     $('.setting').click(function () {
         $('#setting_options').slideUp(0);
-        var chosen = $(this).text();
-        switch (chosen) {
+        var chosen_option = $(this).text();
+        switch (chosen_option) {
             case 'Customization':
                 $('#setting_options').html(
                     "<div>Desktop background</div>" +
