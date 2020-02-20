@@ -100,7 +100,7 @@ $('document').ready(function () {
                 break;
             case 'About':
                 $('#setting_options').html(
-                    'HilusOS UI</br></br>Version: 0.4.1.2-20 Alpha</br>Start of the project: 20.11.2019</br>Developer: Piotr Hilicki (Hilus)' +
+                    'HilusOS UI</br></br>Version: 0.4.20.2-20 Alpha</br>Start of the project: 20.11.2019</br>Developer: Piotr Hilicki (Hilus)' +
                     '</br></br>HilusOS UI is a project started for learning and having fun. I have always wanted to design my own User Interface and I found HTML being </br>' +
                     'most suitable for my abilities. This project made me find so much joy just by programming, visualising and designing something personal. </br>' +
                     'I have learned a lot since I started, maybe not even close to what professionals can do, but still I am happy with what I achieved.</br></br>' +

@@ -82,7 +82,7 @@
 }
 
 /* FOR DEVICES IN LANDSCAPE MODE */
-@media (min-aspect-ratio: 16/9) {
+@media (min-aspect-ratio: 1/1) {
     #settings {
         width: 100px;
         margin-left: -50px;
@@ -101,15 +101,22 @@
         font-size: 60px;
         border-radius: 70px;
     }
+
     #settings_list {
-        top: 100px;
-        width: 300px;
-        height: 550px;
-        font-size: 20px;
-        overflow-x:hidden;
+        top: 120px;
+        width:280px;
+        overflow-x: hidden;
     }
+
     .setting {
         font-size: 50px;
+        height:50px;
         text-align: left;
+    }
+
+    #setting_options {
+        top: 140px;
+        width:680px;
+        font-size: 40px;
     }
 }
