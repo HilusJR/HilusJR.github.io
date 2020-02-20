@@ -6,6 +6,8 @@ html{
 }
 body{
     min-height:98vh;
+    margin: 0 !important;
+	padding: 0 !important;
 }
 
 /* ELEMENTS OF STATUS BAR */
