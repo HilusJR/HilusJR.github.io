@@ -24,15 +24,15 @@ $('document').ready(function () {
 $(document).on('click','.ic,.closeBtn,.minBtn,.infoBtn',function () {
     var b;
     if($(this)[0].className == "ic"){
-    switch($(this)[0].id){
+    switch($(this)[0].id){ // HERE ADD NEW APP INFO (CHANGE CASE *example_ic* AND VARIABLE B *example*)
         case "notepad_ic":
             b = "notes";
             break;
         case "log_ic":
             b = "log";
             break;
-        case "kuczner_ic":
-            b = "kuczner";
+        case "calculator_ic":
+            b = "calculator";
             break;
         case "player_ic":
             b = "player";
