@@ -8,7 +8,9 @@ $('document').ready(function () {
     });
 
     $('#settings_list, #setting_options, #close_settings').hide();
-    if ($('#settings').css('width') == '100px') {
+
+    //OPENING SETTINGS WINDOW ANIMATION
+    if ($('#settings').css('width') == '100px') { // FOR LANDSCAPE DEVICES
         $("#settings").click(function () {
             $(this).animate({
                 top: '50%',
@@ -41,7 +43,7 @@ $('document').ready(function () {
             $('#settings_list, #setting_options, #close_settings').hide();
             $('#setting_options').html(null);
         });
-    } else {
+    } else { // FOR PORTRAIT DEVICES
         $("#settings").click(function () {
             $(this).animate({
                 top: '100px',
@@ -52,7 +54,7 @@ $('document').ready(function () {
                 fontSize: '80px',
                 paddingTop: '10px',
                 paddingBottom: '0px',
-                borderRadius: '16px'
+                borderRadius: '30px'
             }, 0);
             setTimeout("$('#settings_list, #close_settings').fadeIn();", 300);
             
@@ -61,14 +63,14 @@ $('document').ready(function () {
         $('#close_settings').click(function () {
             $('#settings').animate({
                 top: '10px',
-                marginLeft: '-50px',
+                left: '50%',
+                marginLeft: '-150px',
                 marginTop: '0px',
-                width: '100px',
-                height: '20px',
-                fontSize: '20px',
-                paddingTop: '5px',
-                paddingBottom: '5px',
-                borderRadius: '30px'
+                width: '300px',
+                height: '70px',
+                fontSize: '60px',
+                padding: '5px 0',
+                borderRadius: '70px'
             }, 0);
             $('#settings').css('cursor', 'pointer');
             $('#settings_list, #setting_options, #close_settings').hide();
