@@ -95,7 +95,7 @@ body{
     }
     #status:hover{
         width:97%;
-        height:98vh;
+        height:50vh;
         border-radius: 30px;
     }
     #status:hover >#clock{
