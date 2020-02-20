@@ -46,9 +46,14 @@
 @media (max-aspect-ratio: 1/1) {
     #appdrawerbar{
         margin-left:-35px;
-        width:70px;
-        height:70px;
-        border-radius:70px;
+        width:80px;
+        height:80px;
+        border-radius:40px;
     }
-
+    #appdrawerbar:hover{
+        width:800px;
+        height:66px;
+        margin-left:-400px;
+        padding:7px;
+    }
 }
