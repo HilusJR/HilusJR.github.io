@@ -2,7 +2,6 @@ var Legends = ['Wraith', 'Gibraltar', 'Bloodhound', 'Octane', 'Pathfinder', 'Wat
 
 function PickLegend() {
 	const picked_legend = Legends[Math.floor(Math.random() * Legends.length)];
-	picked_legend.toLowerCase();
 	if (picked_legend == document.getElementById('legends_name').innerText) PickLegend();
 	else {
 		document.getElementById('legends_name').innerText = picked_legend;
