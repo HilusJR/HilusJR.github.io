@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>HilusOS UI</title>
-        <link rel="stylesheet" type="text/css" href="status.css">
-        <link rel="stylesheet" type="text/css" href="dock.css">
-        <link rel="stylesheet" type="text/css" href="frames.css">
-        <link rel="stylesheet" type="text/css" href="settings.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script>$( function() {$( ".window" ).draggable( { handle: ".draggable_bar" },{ containment: "body", scroll: false });});</script>
-        <script type="text/javascript" src="js.js"></script>
-        <script type="text/javascript" src="settings.js"></script>
-    </head>
-    <body onload="time()">
-        <div id="status">
-            <div id="clock"></div>
-            <div id="date"></div>
-            <div id="alert">No notifications, just this blank space.</br>You may rest now</div>
-        </div>
-        
-        <div id='close_settings'>x</div>
-        <div id="settings">Settings
-            <div id="settings_list">
-                <div class="setting">Customization</div>
-                <div class="setting">About</div>
-            </div>
-                <div id="setting_options"></div>
-        </div>
-        
-        <div id="appdrawerbar">
-                <div id="notepad_ic" class="ic">N</div>
-                <div id="log_ic" class="ic">L</div>
-                <div id="player_ic" class="ic">M</div>
-                <div id="calculator_ic" class="ic">C</div>
-        </div>
-        <!--<iframe src="welcome_screen/ws.html" class="aframe"></iframe>-->
-        <div id="notes" class="window" style="display:none;"></div>
-        <div id="log" class="window" style="display:none;"></div>  
-        <div id="player" class="window" style="display:none;"></div>
-        <div id="calculator" class="window" style="display:none;"></div>
-    </body>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Apex Legends Picker</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+
+<body onload="PickLegend()">
+	<nav>
+		<div class="nav_btn" onclick="playSelect()" onmouseover="playHover()"><div class='nav_text'>picker</div></div>
+		<div class="nav_btn" onclick="playSelect()" onmouseover="playHover()"><div class='nav_text'>stats</div></div>
+		<div class="nav_btn" onclick="playSelect()" onmouseover="playHover()"><div class='nav_text'>settings</div></div>
+	</nav>
+
+	<div id="picker_container">
+		<div id="span">legend picked for you is</div>
+		<div id="legends_pic"><img id="legends_pic_img" src="img/wattson.png" style="transform:skew(20deg); height:170%; margin-left:-50%;"></div>
+		<div id="legends_name">#legends_name</div>
+		<div id="legends_desc">#legends_desc</div>
+		<div id="legends_abilities">
+			<div class='ability'>
+				<img id="ability_1">
+				<div id="ability_1_name"></div>
+			</div>
+			<div class='ability'>
+				<img id="ability_2">
+				<div id="ability_2_name"></div>
+			</div>
+			<div class='ability'>
+				<img id="ability_3">
+				<div id="ability_3_name"></div>
+			</div>
+		</div>
+	</div>
+	<div id="reroll_btn" onclick="PickLegend(), playReady()" onmouseover="playHover()">
+		<div></div>
+		<div id='text'>try again</div>
+	</div>
+	
+
+	<p>hilusjr | Apex Legend Picker v0.1</p>
+</body>
+
 </html>
