@@ -1,0 +1,359 @@
+@font-face {
+	font-family: 'ApexFont';
+	src: url('ApexFont/Regular/ApexRegular.eot'); /* IE9 Compat Modes */
+	src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('ApexFont/Regular/ApexRegular.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('ApexFont/Regular/ApexRegular.woff') format('woff'), /* Pretty Modern Browsers */
+		 url('ApexFont/Regular/ApexRegular.ttf')  format('truetype'), /* Safari, Android, iOS */
+		 url('ApexFont/Regular/ApexRegular.svg#svgFontName') format('svg'); /* Legacy iOS */
+  }
+
+html {
+	font-family:'ApexFont';
+	color:#fff;
+	height: 100%;
+	background: linear-gradient(to top right, rgb(90, 0, 0), rgb(2, 31, 95));
+	background-size:cover;
+}
+
+body {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+p {
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+
+/* --------------------- NAVBAR --------------------- */
+nav {
+	position:fixed;
+	bottom:0;
+	width:100%;
+	height:10vh;
+	min-height: 50px;
+	max-height: 150px;
+	margin:0 auto;
+}
+
+.nav_btn {
+	width:32%;
+	height:100%;
+	margin: 0 0 0 3px;
+	text-transform: uppercase;
+	text-align: center;
+	font-size:4vh;
+	transform: skew(30deg);
+	background:linear-gradient(rgb(31, 31, 31), rgb(49, 49, 49));
+	box-sizing: border-box;
+	border-bottom:10px solid grey;
+	cursor:pointer;
+	float:left;
+}
+
+.nav_text {
+	position:absolute;
+	bottom:0;
+	width:100%;
+	color:rgb(163, 163, 163);
+	transform:skew(-30deg);
+}
+
+.nav_btn:hover {
+	background:linear-gradient(rgb(31, 31, 31), rgb(124, 124, 124));
+	border-bottom:10px solid #fff;
+}
+
+.nav_btn:hover .nav_text{
+	color:#fff;
+}
+
+/*.nav_btn:hover {
+	background:linear-gradient(rgb(128, 2, 2), rgb(216, 0, 0));
+	border-bottom:10px solid rgb(247, 70, 0);
+}*/
+
+
+/* -------------------- PICKER -------------------- */
+#picker_container {
+	position:fixed;
+	left:0;
+	width:100%;
+	height: 60%;
+	margin: 1% auto 0 auto;
+	box-sizing:border-box;
+}
+
+#span {
+	width:100%;
+	height:10%;
+	text-align:center;
+	font-size:3.5vh;
+}
+
+#legends_pic {
+	margin: 10% 0 0 30%;
+	width:40%;
+	min-width:100px;
+	height:25%;
+	min-height:150px;
+	transform: skew(-20deg);
+	text-align:center;
+	box-sizing: border-box;
+	border:5px solid rgb(110, 110, 110);
+	overflow:hidden;
+}
+
+#legends_name {
+	width:100%;
+	height:10vmin;
+	margin:2% 0 0 0;
+	text-align:center;
+	font-size:10vmin;
+}
+
+#legends_desc {
+	width:100%;
+	height:3vmin;
+	margin:2px 0 0 0;
+	text-align:center;
+	font-size:3vmin;
+	color:rgb(163, 163, 163);
+}
+
+#legends_abilities {
+	position:absolute;
+	bottom:0;
+	right:5%;
+	width:90%;
+	height:20%;
+}
+
+.ability {
+	width:33.3%;
+	height:100%;
+	text-align:center;
+	float:left;
+}
+
+.ability img {
+	height:50%;
+}
+
+.ability div {
+	width:100%;
+	height:50%;
+	font-size:4vmin;
+	box-sizing:border-box;
+	padding-top:3vmin;
+}
+
+#reroll_btn {
+	position:absolute;
+	bottom:11vh;
+	left:5%;
+	width:90%;
+	height:10vh;
+	text-align:center;
+	font-size:4vh;
+	border: 2px solid rgb(151, 151, 151);
+	border-bottom:10px solid rgb(253, 72, 0);
+	background:linear-gradient(rgba(255,0,0,0), rgb(255, 94, 0, 0.3));
+	box-sizing: border-box;
+}
+
+#reroll_btn div:first-child {
+	border-top: 10px solid #fff;
+    border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	margin:0 auto;
+    height: 0;
+    width: 50%;
+}
+
+#text {
+	position:absolute;
+	width:100%;
+	bottom:1%;
+}
+
+#reroll_btn:hover {
+	border: 2px solid rgb(253, 72, 0);
+	border-bottom:10px solid rgb(253, 72, 0);
+	background: linear-gradient(to top right,  rgb(2, 31, 95), rgb(90, 0, 0)) no-repeat;
+}
+
+#reroll_btn:hover div:first-child {
+	border-top: 10px solid rgb(253, 72, 0);
+}
+
+
+
+/* ---------------------------------------------------------------- DESKTOP ---------------------------------------------------------------------------- */
+@media only screen and (min-width: 768px) {
+	nav {
+		position:relative;
+		width:50%;
+		min-width:500px;
+		max-width: 1000px;
+		height:10vh;
+		min-height: 50px;
+		max-height: 150px;
+		margin:0 auto;
+	}
+	
+	.nav_btn {
+		width:32%;
+		height:100%;
+		margin: 0 0 0 3px;
+		text-transform: uppercase;
+		text-align: center;
+		font-size:4vmin;
+		transform: skew(30deg);
+		background:linear-gradient(rgb(31, 31, 31), rgb(49, 49, 49));
+		box-sizing: border-box;
+		border-bottom:10px solid grey;
+		cursor:pointer;
+		float:left;
+	}
+	
+	.nav_text {
+		position:absolute;
+		bottom:0;
+		width:100%;
+		color:rgb(163, 163, 163);
+		transform:skew(-30deg);
+	}
+	
+	.nav_btn:hover {
+		background:linear-gradient(rgb(31, 31, 31), rgb(124, 124, 124));
+		border-bottom:10px solid #fff;
+	}
+	
+	.nav_btn:hover .nav_text{
+		color:#fff;
+	}
+	
+	/*.nav_btn:hover {
+		background:linear-gradient(rgb(128, 2, 2), rgb(216, 0, 0));
+		border-bottom:10px solid rgb(247, 70, 0);
+	}*/
+	
+	
+	/* -------------------- PICKER -------------------- */
+	#picker_container {
+		position:fixed;
+		left:10%;
+		width:80%;
+		height: 70vmin;
+		margin: 1% auto 0 auto;
+		box-sizing:border-box;
+	}
+	
+	#span {
+		width:100%;
+		height:10%;
+		text-align:center;
+		font-size:2vw;
+	}
+	
+	#legends_pic {
+		position: relative;
+		top:10%;
+		left:5%;
+		width:25%;
+		min-width:100px;
+		height:80%;
+		min-height:150px;
+		transform: skew(-20deg);
+		text-align:center;
+		box-sizing: border-box;
+		border:5px solid rgb(110, 110, 110);
+		overflow:hidden;
+		float:left;
+	}
+	
+	#legends_name {
+		width:70%;
+		height:10vmin;
+		margin:4% 0 0 30%;
+		text-align:center;
+		font-size:10vmin;
+	}
+	
+	#legends_desc {
+		width:70%;
+		height:3vmin;
+		margin:1px 0 0 30%;
+		text-align:center;
+		font-size:3vmin;
+		color:rgb(163, 163, 163);
+	}
+	
+	#legends_abilities {
+		position:absolute;
+		bottom:0;
+		right:0;
+		width:70%;
+		height:45%;
+	}
+	
+	.ability {
+		width:33.3%;
+		height:100%;
+		text-align:center;
+		float:left;
+	}
+	
+	.ability img {
+		height:50%;
+	}
+	
+	.ability div {
+		width:100%;
+		height:50%;
+		font-size:4vmin;
+		box-sizing:border-box;
+		padding-top:3vmin;
+	}
+	
+	#reroll_btn {
+		position:absolute;
+		bottom:1vh;
+		left:40%;
+		width:20%;
+		height:10vmin;
+		text-align:center;
+		font-size:4vmin;
+		border: 2px solid rgb(151, 151, 151);
+		border-bottom:10px solid rgb(253, 72, 0);
+		background:linear-gradient(rgba(255,0,0,0), rgb(255, 94, 0, 0.3));
+		box-sizing: border-box;
+	}
+	
+	#reroll_btn div:first-child {
+		border-top: 10px solid #fff;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		margin:0 auto;
+		height: 0;
+		width: 50%;
+	}
+	
+	#text {
+		position:absolute;
+		width:100%;
+		bottom:1%;
+	}
+	
+	#reroll_btn:hover {
+		border: 2px solid rgb(253, 72, 0);
+		border-bottom:10px solid rgb(253, 72, 0);
+		background: linear-gradient(to top right,  rgb(2, 31, 95), rgb(90, 0, 0)) no-repeat;
+	}
+	
+	#reroll_btn:hover div:first-child {
+		border-top: 10px solid rgb(253, 72, 0);
+	}
+}
