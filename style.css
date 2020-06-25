@@ -104,6 +104,12 @@ nav {
 	overflow:hidden;
 }
 
+#legends_pic_img {
+	transform:skew(20deg); 
+	width:150%; 
+	margin-left:-15%;
+}
+
 #legends_name {
 	width:100%;
 	height:10vmin;
@@ -244,6 +250,12 @@ nav {
 		min-height:150px;
 		float:left;
 	}
+
+	#legends_pic_img {
+		transform:skew(20deg); 
+		height:170%; 
+		margin-left:-50%;
+	}
 	
 	#legends_name {
 		width:70%;
@@ -286,5 +298,6 @@ nav {
 		width:20%;
 		height:10vmin;
 		font-size:4vmin;
+		cursor:pointer;
 	}
 }
