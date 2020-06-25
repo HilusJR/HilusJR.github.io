@@ -42,7 +42,7 @@ nav {
 	margin: 0 0 0 3px;
 	text-transform: uppercase;
 	text-align: center;
-	font-size:4vh;
+	font-size:3vh;
 	transform: skew(30deg);
 	background:linear-gradient(rgb(31, 31, 31), rgb(49, 49, 49));
 	box-sizing: border-box;
@@ -95,7 +95,7 @@ nav {
 	margin: 10% 0 0 30%;
 	width:40%;
 	min-width:100px;
-	height:25%;
+	height:35%;
 	min-height:150px;
 	transform: skew(-20deg);
 	text-align:center;
