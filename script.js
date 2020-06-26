@@ -41,48 +41,48 @@ function PickLegend() {
 		document.getElementById('ability_1').src = "img/" + picked_legend + "1.png";
 		document.getElementById('ability_2').src = "img/" + picked_legend + "2.png";
 		document.getElementById('ability_3').src = "img/" + picked_legend + "3.png";
-	}
-	switch (picked_legend) {
-		case 'Bangalore':
-			Bangalore.setDetails();
-			break;
-		case 'Bloodhound':
-			Bloodhound.setDetails();
-			break;
-		case 'Caustic':
-			Caustic.setDetails();
-			break;
-		case 'Crypto':
-			Legend_Crypto.setDetails();
-			break;
-		case 'Gibraltar':
-			Gibraltar.setDetails();
-			break;
-		case 'Loba':
-			Loba.setDetails();
-			break;
-		case 'Lifeline':
-			Lifeline.setDetails();
-			break;
-		case 'Mirage':
-			Mirage.setDetails();
-			break;
-		case 'Octane':
-			Octane.setDetails();
-			break;
-		case 'Pathfinder':
-			Pathfinder.setDetails();
-			break;
-		case 'Revenant':
-			Revenant.setDetails();
-			break;
-		case 'Wattson':
-			Wattson.setDetails();
-			break;
-		case 'Wraith':
-			Wraith.setDetails();
-			break;
-		default:
-			alert('Something went wrong. Please contact developer')
+		switch (picked_legend) {
+			case 'Bangalore':
+				Bangalore.setDetails();
+				break;
+			case 'Bloodhound':
+				Bloodhound.setDetails();
+				break;
+			case 'Caustic':
+				Caustic.setDetails();
+				break;
+			case 'Crypto':
+				Legend_Crypto.setDetails();
+				break;
+			case 'Gibraltar':
+				Gibraltar.setDetails();
+				break;
+			case 'Loba':
+				Loba.setDetails();
+				break;
+			case 'Lifeline':
+				Lifeline.setDetails();
+				break;
+			case 'Mirage':
+				Mirage.setDetails();
+				break;
+			case 'Octane':
+				Octane.setDetails();
+				break;
+			case 'Pathfinder':
+				Pathfinder.setDetails();
+				break;
+			case 'Revenant':
+				Revenant.setDetails();
+				break;
+			case 'Wattson':
+				Wattson.setDetails();
+				break;
+			case 'Wraith':
+				Wraith.setDetails();
+				break;
+			default:
+				alert('Something went wrong. Please contact developer')
+		}
 	}
 }
