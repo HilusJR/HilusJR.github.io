@@ -253,8 +253,8 @@ nav {
 
 	#legends_pic_img {
 		transform:skew(20deg); 
-		height:170%; 
-		margin-left:-50%;
+		height:120%; 
+		margin-left:-20%;
 	}
 	
 	#legends_name {
