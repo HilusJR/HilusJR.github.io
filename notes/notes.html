@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Notepad</title>
+        <link rel="stylesheet" type="text/css" href="notes.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="notes.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="p"><strong>Notepad</strong></div>
+        <div id="toolbar">
+            <div id='newNote' class="toolbar_btn">New</div>
+            <div id='openNote' class="toolbar_btn">Open</div>
+            <div id='saveNote' class="toolbar_btn">Save</div>
+        </div>
+        <textarea id="title" style="display:none;"></textarea>
+        <textarea id="note" style="display:none;"></textarea></br>
+        <div id="open" style="display:none;">Please choose one from below
+            <div id="notes"></div>
+        </div>
+        <div id="cancel" style="display:none;">CANCEL</div>
+    </body>
+</html>

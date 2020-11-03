@@ -1,0 +1,26 @@
+html{
+    font-family:'Arial';
+}
+#p{
+    position:absolute;
+    top:0;
+    left:0;
+    height:30px;
+    width:100%;
+    padding-top:10px;
+    font-size:20px;
+    text-align:center;
+    margin-bottom:20px;
+    border-radius:20px 20px 0 0;
+    box-shadow:2px 0px 5px black;
+}
+#log{
+    margin-top:60px;
+    margin-left:20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+	height:0;
+}
