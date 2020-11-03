@@ -1,0 +1,112 @@
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: "Arial";
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid;
+    box-sizing: border-box;
+}
+
+#songs {
+    position: relative;
+    width: 46%;
+    height: 90vh;
+    margin: 5vh 2% 0 2%;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 3vh;
+    box-shadow: 5px 5px 10px 5px #c7c7c7;
+}
+
+#songsTopBar {
+    width: 100%;
+    height: 7vh;
+    border-radius: 3vh 3vh 0 0;
+    background: #2196F3;
+}
+
+.tab {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding-top: 1.5vh;
+    font-size: 4vh;
+    color: #fff;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    float: left;
+}
+
+#searchBar {
+    width: 98%;
+    height: 6vh;
+    margin: 1vh 1%;
+    font-size: 4vh;
+    border: none;
+    border-bottom: 1px solid #757575;
+    box-sizing: border-box;
+}
+
+#searchBar:focus {
+    outline: none;
+    border-bottom: 3px solid #757575;
+}
+
+#songsContainer {
+    width: 100%;
+    height: 75vh;
+    box-sizing: border-box;
+}
+
+.song {
+    width: 96%;
+    height: 14vh;
+    margin: 3vh 2% 1vh 2%;
+    box-shadow: 3px 3px 6px 3px #d3d3d3;
+    border-left: 50px solid #2196F3;
+    border-radius: 3vh;
+    box-sizing: border-box;
+}
+
+#song0 {
+    margin: 1vh 2% 1vh 2%;
+}
+
+.songInfo {
+    width: 90%;
+    height: 100%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.title {
+    width: 100%;
+    height: 60%;
+    font-size: 5vmin;
+    padding: 1.7vmin 0 1.7vmin 2%;
+    color: #212121;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.author {
+    width: 100%;
+    height: 40%;
+    color: #757575;
+    font-size: 3vmin;
+    padding: 1.3vmin 0 1.3vmin 2%;
+    box-sizing: border-box;
+}
+
+.transfer {
+    width: 10%;
+    height: 100%;
+    float: left;
+    font-size: 10vmin;
+    padding: 1.5vmin 0;
+}

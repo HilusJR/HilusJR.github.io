@@ -2,57 +2,48 @@
 <html>
 
 <head>
-    <title>HilusOS UI</title>
-    <link rel="stylesheet" type="text/css" href="status.css">
-    <link rel="stylesheet" type="text/css" href="dock.css">
-    <link rel="stylesheet" type="text/css" href="frames.css">
-    <link rel="stylesheet" type="text/css" href="settings.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Voter</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $(function() {
-            $(".window").draggable({
-                handle: ".draggable_bar"
-            }, {
-                containment: "body",
-                scroll: false
-            });
-        });
-    </script>
-    <script type="text/javascript" src="js.js"></script>
-    <script type="text/javascript" src="settings.js"></script>
-    <link rel="manifest" href="manifest.json">
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 
-<body onload="time()">
-    <div id="status">
-        <div id="clock"></div>
-        <div id="date"></div>
-        <div id="alert">No notifications, just this blank space.</br>You may rest now</div>
-    </div>
-
-    <div id='close_settings'>x</div>
-    <div id="settings">Settings
-        <div id="settings_list">
-            <div class="setting">Customization</div>
-            <div class="setting">About</div>
+<body>
+    <div id="admin" class="page">
+        <div id="songs">
+            <div id='songsTopBar'>
+                <div id="songsListTab" class="tab">pozycje</div>
+                <div id="addSongTab" class="tab">dodawanie</div>
+            </div>
+            <input type="text" id="searchBar">
+            <div id="songsContainer">
+                <div id="songsList">
+                    <div id="song0" class="song">
+                        <div class="songInfo">
+                            <div id="title" class="title">stan</div>
+                            <div id="author" class="author">Eminem</div>
+                        </div>
+                        <div id="transfer" class="transfer">+</div>
+                    </div>
+                    <div id="song" class="song">
+                        <div class="songInfo">
+                            <div id="title" class="title">stan</div>
+                            <div id="author" class="author">Eminem</div>
+                        </div>
+                        <div id="transfer" class="transfer">+</div>
+                    </div>
+                    <div id="song" class="song">
+                        <div class="songInfo">
+                            <div id="title" class="title">stan</div>
+                            <div id="author" class="author">Eminem</div>
+                        </div>
+                        <div id="transfer" class="transfer">+</div>
+                    </div>
+                </div>
+                <div id="addSong" style="display: none;">aaaaaa</div>
+            </div>
         </div>
-        <div id="setting_options"></div>
-    </div>
-
-    <div id="appdrawerbar">2
-        <div id="notepad_ic" class="ic">N</div>
-        <div id="log_ic" class="ic">L</div>
-        <div id="kuczner_ic" class="ic">K</div>
-        <div id="player_ic" class="ic">M</div>
-    </div>
-    <!--<iframe src="welcome_screen/ws.html" class="aframe"></iframe>-->
-    <div id="notes" class="window" style="display:none;"></div>
-    <div id="log" class="window" style="display:none;"></div>
-    <div id="kuczner" class="window" style="display:none;"></div>
-    <div id="player" class="window" style="display:none;"></div>
 </body>
 
 </html>
