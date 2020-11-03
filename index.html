@@ -10,6 +10,8 @@
 </head>
 
 <body>
+
+    <!------------------------- ADMIN ---------------------------->
     <div id="admin" class="page">
         <div id="songs">
             <div id='songsTopBar'>
@@ -18,6 +20,7 @@
             </div>
             <input type="text" id="searchBar">
             <div id="songsContainer">
+
                 <div id="songsList">
                     <div id="song0" class="song">
                         <div class="songInfo">
@@ -41,9 +44,19 @@
                         <div id="transfer" class="transfer">+</div>
                     </div>
                 </div>
-                <div id="addSong" style="display: none;">aaaaaa</div>
+
+                <div id="addSong" style="display: none;">
+                    <div class="hint">Podaj tytuł</div>
+                    <input type="text" id="title_input" class="songInfoInput">
+                    <div class="hint">Podaj wykonawcę</div>
+                    <input type="text" id="author_input" class="songInfoInput">
+                    <div id="submitSongInfo">dodaj</div>
+                </div>
             </div>
         </div>
+
+
+
 </body>
 
 </html>

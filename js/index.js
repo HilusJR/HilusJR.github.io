@@ -3,12 +3,12 @@ $('document').ready(function() {
     //Show songs in admin
     $('#songsListTab').click(function() {
         $("#addSong").hide();
-        $("#songsList").show();
+        $("#songsList, #searchBar").show();
     })
 
     //Show add song in admin
     $('#addSongTab').click(function() {
-        $("#songsList").hide();
+        $("#songsList, #searchBar").hide();
         $("#addSong").show();
     })
 
