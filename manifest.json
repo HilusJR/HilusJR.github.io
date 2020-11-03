@@ -1,0 +1,7 @@
+{
+    "name": "HilusOS UI Concept",
+    "short_name": "HilusOS",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background-color": "#0073e6"
+}
