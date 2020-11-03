@@ -2,6 +2,6 @@
     "name": "HilusOS UI Concept",
     "short_name": "HilusOS",
     "start_url": "/index.html",
-    "display": "standalone",
+    "display": "fullscreen",
     "background-color": "#0073e6"
 }
