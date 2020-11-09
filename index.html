@@ -9,35 +9,24 @@
     <script type="text/javascript" src="js/index.js"></script>
 </head>
 
-<body>
+<body onload="loadSongsList()">
 
     <!------------------------- ADMIN ---------------------------->
     <div id="admin" class="page">
         <div id="songs-container">
             <div id="songs-container-nav">
-                <div id="songs-container-nav-list" class="songs-container-nav-btn" onclick="ChooseSongsContainer(this.id)">lista piosenek</div>
+                <div id="songs-container-nav-list" class="songs-container-nav-btn" onclick="ChooseSongsContainer(this.id), loadSongsList()">lista piosenek</div>
                 <div id="songs-container-nav-add" class="songs-container-nav-btn" onclick="ChooseSongsContainer(this.id)">dodaj nową</div>
             </div>
 
-            <div id="songs-container-list">
-                <div id="song" class="song">
-                    <div class="song-col"><i class="demo-icon icon-music"></i></div>
-                    <div class="song-col">
-                        <div id="song-title" class="song-title">stan</div>
-                        <div id="song-author" class="song-author">Eminem</div>
-                    </div>
-                    <div class="song-col">
-                        <div id="song-transfer" class="song-transfer"><i class="demo-icon icon-right-big"></i></div>
-                    </div>
-                </div>
-            </div>
+            <div id="songs-container-list"></div>
 
             <div id="songs-container-add-song">
                 <p class="add-song-hint">Podaj tytuł piosenki</p>
                 <input type="text" id="title-input" class="add-song-input">
                 <p class="add-song-hint">Podaj wykonawcę</p>
                 <input type="text" id="author-input" class="add-song-input">
-                <div id="add-song-submit">dodaj</div>
+                <div id="add-song-submit" onclick="addSong()">dodaj</div>
             </div>
         </div>
     </div>

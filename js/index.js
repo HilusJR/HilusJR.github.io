@@ -19,3 +19,38 @@ function ChooseSongsContainer(elem) {
         addSong.style.display = "block";
     }
 }
+
+function addSong() {
+    let title = document.getElementById("title-input").value;
+    let author = document.getElementById("author-input").value;
+    let i = localStorage.getItem("song_i");
+    let song = {
+        title: title,
+        author: author
+    }
+    if (i == null) i = 0;
+    localStorage["song" + i] = JSON.stringify(song);
+    i++;
+    localStorage.setItem("song_i", i);
+}
+
+function loadSongsList() {
+    let songsList = "",
+        song;
+    let i = localStorage.getItem("song_i");
+    i--;
+    for (i; i >= 0; i--) {
+        song = JSON.parse(localStorage["song" + i]);
+        songsList += '<div id="song" class="song">' +
+            '<div class="song-col"><i class="demo-icon icon-music"></i></div>' +
+            '<div class="song-col">' +
+            '<div id="song-title" class="song-title">' + song.title + '</div>' +
+            '<div id="song-author" class="song-author">' + song.author + '</div>' +
+            '</div>' +
+            '<div class="song-col">' +
+            '<div id="song-transfer" class="song-transfer"><i class="demo-icon icon-right-big"></i></div>' +
+            '</div>' +
+            '</div>'
+    }
+    document.getElementById("songs-container-list").innerHTML = songsList;
+}
