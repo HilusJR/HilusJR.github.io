@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Voter</title>
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+
+    <!------------------------- ADMIN ---------------------------->
+    <div id="admin" class="page">
+        <div id="songs">
+            <div id='songsTopBar'>
+                <div id="songsListTab" class="tab">pozycje</div>
+                <div id="addSongTab" class="tab">dodawanie</div>
+            </div>
+            <input type="text" id="searchBar">
+            <div id="songsContainer">
+
+                <div id="songsList">
+                    <div id="song0" class="song">
+                        <div class="songInfo">
+                            <div id="title" class="title">stan</div>
+                            <div id="author" class="author">Eminem</div>
+                        </div>
+                        <div id="transfer" class="transfer">+</div>
+                    </div>
+                    <div id="song" class="song">
+                        <div class="songInfo">
+                            <div id="title" class="title">stan</div>
+                            <div id="author" class="author">Eminem</div>
+                        </div>
+                        <div id="transfer" class="transfer">+</div>
+                    </div>
+                    <div id="song" class="song">
+                        <div class="songInfo">
+                            <div id="title" class="title">stan</div>
+                            <div id="author" class="author">Eminem</div>
+                        </div>
+                        <div id="transfer" class="transfer">+</div>
+                    </div>
+                </div>
+
+                <div id="addSong" style="display: none;">
+                    <div class="hint">Podaj tytuł</div>
+                    <input type="text" id="title_input" class="songInfoInput">
+                    <div class="hint">Podaj wykonawcę</div>
+                    <input type="text" id="author_input" class="songInfoInput">
+                    <div id="submitSongInfo">dodaj</div>
+                </div>
+            </div>
+        </div>
+
+
+
+</body>
+
+</html>
