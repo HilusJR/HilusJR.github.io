@@ -26,6 +26,7 @@ body {
 #songs-container {
     width: 50vw;
     height: 100vh;
+    float: left;
 }
 
 #songs-container-nav {
@@ -36,6 +37,7 @@ body {
     font-size: 3vmin;
     color: var(--text);
     font-weight: bold;
+    box-shadow: 0 5px 5px var(--dividerColor);
 }
 
 .songs-container-nav-btn {
@@ -55,6 +57,7 @@ body {
 #songs-container-list {
     width: 100%;
     height: 92vmin;
+    box-shadow: 1px 0 5px var(--dividerColor);
     overflow: scroll;
 }
 
@@ -103,6 +106,10 @@ body {
 
 #songs-container-add-song {
     width: 100%;
+    height: 92vmin;
+    box-shadow: 1px 0 5px var(--dividerColor);
+    box-sizing: border-box;
+    padding-top: 9vmin;
     display: none;
 }
 
@@ -113,6 +120,10 @@ body {
     padding: 1vmin 0 1vmin 5vmax;
     margin-top: 9vmin;
     text-transform: uppercase;
+}
+
+#songs-container-add-song p:first-child {
+    margin-top: 2vmin;
 }
 
 .add-song-input {
@@ -152,4 +163,83 @@ body {
     box-shadow: 2px 2px 7px var(--secondaryText);
     background-color: var(--primaryColor);
     color: var(--text);
+}
+
+#chosen-songs-container {
+    width: 50vw;
+    height: 100vh;
+    box-shadow: 5px 0 5px var(--dividerColor);
+    float: left;
+}
+
+#chosen-songs-container-header {
+    width: 100%;
+    height: 8vmin;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3vmin;
+    color: var(--primaryText);
+    font-weight: bold;
+    box-shadow: 0 5px 5px var(--dividerColor);
+    box-sizing: border-box;
+    padding-top: 2.5vmin;
+}
+
+#chosen-songs-container-list {
+    width: 100%;
+    height: 80vmin;
+    overflow: scroll;
+}
+
+.chosen-song {
+    width: 100%;
+    height: 8vmin;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--dividerColor);
+}
+
+.chosen-song-col {
+    width: 80%;
+    height: 100%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.chosen-song-transfer {
+    width: 20%;
+    float: left;
+}
+
+.chosen-song-title {
+    width: 100%;
+    height: 5vmin;
+    font-size: 3vmin;
+    padding: 1vmin 0 1vmin 2vmin;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+.chosen-song-author {
+    width: 100%;
+    height: 3vmin;
+    font-size: 2vmin;
+    margin: 0 0 0 2vmin;
+    box-sizing: border-box;
+    color: var(--secondaryText)
+}
+
+#chosen-songs-container-vote {
+    width: 50%;
+    height: 8vmin;
+    box-sizing: border-box;
+    padding: 2.5vmin 0;
+    margin: 2vmin auto;
+    text-align: center;
+    font-size: 3vmin;
+    text-transform: uppercase;
+    background-color: var(--primaryColor);
+    color: var(--text);
+    border-radius: 2vmin;
+    box-shadow: 3px 3px 5px var(--dividerColor);
+    text-overflow: clip;
 }

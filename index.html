@@ -9,7 +9,7 @@
     <script type="text/javascript" src="js/index.js"></script>
 </head>
 
-<body onload="loadSongsList()">
+<body onload="loadSongsList(), loadChosenSongsList()">
 
     <!------------------------- ADMIN ---------------------------->
     <div id="admin" class="page">
@@ -29,7 +29,12 @@
                 <div id="add-song-submit" onclick="addSong()">dodaj</div>
             </div>
         </div>
-    </div>
+
+        <div id="chosen-songs-container">
+            <div id="chosen-songs-container-header">wybrane piosenki</div>
+            <div id="chosen-songs-container-list"></div>
+            <div id="chosen-songs-container-vote">głosowanie</div>
+        </div>
 
 
 
