@@ -4,12 +4,14 @@
 <head>
     <title>Voter</title>
     <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="css/vote-screen.css">
     <link rel="stylesheet" type="text/css" href="css/fontello.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/admin.js"></script>
+    <script type="text/javascript" src="js/vote-screen.js"></script>
 </head>
 
-<body onload="loadSongsList(), loadChosenSongsList()">
+<body onload="checkPage(), loadSongsList(), loadChosenSongsList(), checkPage()">
 
     <!------------------------- ADMIN ---------------------------->
     <div id="admin" class="page">
@@ -33,8 +35,21 @@
         <div id="chosen-songs-container">
             <div id="chosen-songs-container-header">wybrane piosenki</div>
             <div id="chosen-songs-container-list"></div>
-            <div id="chosen-songs-container-vote">głosowanie</div>
+            <div id="chosen-songs-container-vote" onclick="goToVoteScreen()">głosowanie</div>
         </div>
+    </div>
+
+    <div id="vote-screen" class="page">
+        <div id="vote-screen-header">zagłosuj na piosenkę</div>
+        <div id="vote-screen-songs-container"></div>
+        <div id="vote-screen-footer">
+            <div id="vote-screen-chosen-song">Wybrano:
+                <span id="vote-screen-chosen-song-title"></span>
+                <span id="vote-screen-chosen-song-author"></span>
+            </div>
+            <div id="vote-screen-vote-btn" onclick="vote()">zagłosuj</div>
+        </div>
+    </div>
 
 
 

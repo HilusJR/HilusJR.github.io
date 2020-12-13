@@ -1,0 +1,125 @@
+#vote-screen {
+    display: none;
+}
+
+#vote-screen-header {
+    width: 100%;
+    height: 8vmin;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3vmin;
+    color: var(--primaryText);
+    font-weight: bold;
+    box-shadow: 0 5px 5px var(--dividerColor);
+    box-sizing: border-box;
+    padding-top: 2.5vmin;
+}
+
+#vote-screen-songs-container {
+    width: 100%;
+    height: 72vmin;
+    box-sizing: border-box;
+}
+
+.vote-screen-song {
+    width: 47%;
+    height: 12vmin;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px var(--dividerColor);
+    border-radius: 2vmin;
+    margin: 2vmin 0 0 2%;
+    float: left;
+}
+
+.vote-screen-song-col {
+    width: 10%;
+    height: 100%;
+    font-size: 4vmin;
+    box-sizing: border-box;
+    padding-top: 4vmin;
+    text-align: center;
+    float: left;
+}
+
+.vote-screen-song div:nth-child(2) {
+    width: 80%;
+    padding: 0;
+    text-align: left;
+}
+
+.vote-screen-song-title {
+    width: 100%;
+    height: 6vmin;
+    font-size: 4vmin;
+    padding: 1.5vmin 2vmin 0 2vmin;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.vote-screen-song-author {
+    width: 100%;
+    height: 4.5vmin;
+    font-size: 3vmin;
+    margin: 1.5vmin 2vmin 0 2vmin;
+    box-sizing: border-box;
+    color: var(--secondaryText)
+}
+
+.vote-screen-song-transfer {
+    cursor: pointer;
+}
+
+#vote-screen-footer {
+    position: relative;
+    width: 100%;
+    height: 20vmin;
+    text-transform: uppercase;
+    font-size: 3vmin;
+    color: var(--primaryText);
+    font-weight: bold;
+    box-shadow: 0 -5px 5px var(--dividerColor);
+    box-sizing: border-box;
+    padding: 2.5vmin 0 0 2.5vmin;
+}
+
+#vote-screen-chosen-song-title {
+    position: absolute;
+    top: 3vmin;
+    height: 6vmin;
+    font-size: 6vmin;
+    margin-left: 5vmin;
+    color: var(--primaryText);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#vote-screen-chosen-song-author {
+    position: absolute;
+    top: 12vmin;
+    height: 8vmin;
+    font-size: 4vmin;
+    margin-left: 5vmin;
+    color: var(--secondaryText);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#vote-screen-vote-btn {
+    position: absolute;
+    top: 5vmin;
+    right: 5vmin;
+    width: 20%;
+    height: 10vmin;
+    box-sizing: border-box;
+    padding: 3vmin 0;
+    text-align: center;
+    font-size: 4vmin;
+    text-transform: uppercase;
+    background-color: var(--primaryColor);
+    color: var(--text);
+    border-radius: 2vmin;
+    box-shadow: 3px 3px 5px var(--dividerColor);
+    text-overflow: clip;
+}
