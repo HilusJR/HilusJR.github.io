@@ -1,0 +1,10 @@
+{
+    "name": "Voter",
+    "short_name": "Voter",
+    "start_url": "/index.html",
+    "background_color": "#0099DC",
+    "theme_color": "#ffffff",
+    "icons": [],
+    "display": "fullscreen",
+    "orientation": "landscape"
+}
