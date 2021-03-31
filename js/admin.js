@@ -1,36 +1,57 @@
 function checkPage() {
-    /*let admin = document.getElementById("admin");
+    let admin = document.getElementById("admin");
     let voteScreen = document.getElementById("vote-screen");
-    //let voteResults = document.getElementById("vote-results");
+    let resultsScreen = document.getElementById("results-screen");
     let page = localStorage.getItem("page");
     switch (page) {
         case "admin":
             admin.style.display = "block";
             voteScreen.style.display = "none";
-            //voteResults.style.display = "none";
+            resultsScreen.style.display = "none";
             break;
         case "voteScreen":
             admin.style.display = "none";
             voteScreen.style.display = "block";
-            //voteResults.style.display = "none";
+            resultsScreen.style.display = "none";
             break;
-        case "voteResults":
+        case "resultsScreen":
             admin.style.display = "none";
             voteScreen.style.display = "none";
-            //voteResults.style.display = "block";
+            resultsScreen.style.display = "block";
+            loadVotedSongsList();
             break;
         default:
             admin.style.display = "none";
             voteScreen.style.display = "block";
-            //voteResults.style.display = "none";
-    }*/
+            resultsScreen.style.display = "none";
+    }
 }
 
-function goToVoteScreen() {
-    document.getElementById("admin").style.display = "none";
-    document.getElementById("vote-screen").style.display = "block";
-    localStorage.setItem("page", "voteScreen");
-    loadChosenSongsList();
+function goToScreen(pageName) {
+    switch (pageName) {
+        case "navbar-admin":
+            document.getElementById("admin").style.display = "block";
+            document.getElementById("vote-screen").style.display = "none";
+            document.getElementById("results-screen").style.display = "none";
+            localStorage.setItem("page", "admin");
+            break;
+        case "chosen-songs-container-vote":
+            document.getElementById("admin").style.display = "none";
+            document.getElementById("vote-screen").style.display = "block";
+            document.getElementById("results-screen").style.display = "none";
+            localStorage.setItem("page", "voteScreen");
+            loadChosenSongsList();
+            break;
+        case "navbar-results":
+            document.getElementById("admin").style.display = "none";
+            document.getElementById("vote-screen").style.display = "none";
+            document.getElementById("results-screen").style.display = "block";
+            localStorage.setItem("page", "resultsScreen");
+            loadVotedSongsList();
+            break;
+        default:
+            alert("Something went wrong, please contact developer!");
+    }
 }
 
 
@@ -157,7 +178,7 @@ function loadChosenSongsList() {
             '<div class="vote-screen-song-col">' +
             '<div id="vote-screen-song-choose' + chosenSongs[i] + '" class="vote-screen-song-choose" onclick="chooseVoteScreenSong(this.id)">' +
             '<i class="demo-icon icon-right-big"></i></div>' +
-            '</div>' +
+            '<p id="chosenSongsIndex" style="display:none;">' + i + '</p>' + '</div>' +
             '</div>'
     }
     document.getElementById("chosen-songs-container-list").innerHTML = chosenSongsList;

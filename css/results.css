@@ -1,0 +1,94 @@
+#results-screen {
+    display: none;
+}
+
+#results-screen-header {
+    position: relative;
+    width: 100%;
+    height: 8vmin;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3vmin;
+    color: var(--primaryText);
+    font-weight: bold;
+    box-shadow: 0 5px 5px var(--dividerColor);
+    box-sizing: border-box;
+    padding-top: 2.5vmin;
+}
+
+.results-screen-col {
+    height: calc(100vh - 8vmin);
+    box-sizing: border-box;
+    float: left;
+}
+
+#results-screen-col-left {
+    width: 75%;
+}
+
+#results-screen-col-right {
+    width: 25%;
+}
+
+#results-screen-votes-amount {
+    width: 80%;
+    height: 6vmin;
+    margin: 2vmin auto;
+    padding: 1.5vmin 2vmin;
+    text-align: center;
+    font-size: 3vmin;
+    border-radius: 2vmin;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 3px 2px var(--dividerColor);
+}
+
+#results-screen-songs-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.5vmin 2vmin;
+    text-align: center;
+    font-size: 3vmin;
+    border-radius: 2vmin;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 3px 2px var(--dividerColor);
+}
+
+.results-song {
+    width: 100%;
+    height: 7.5vmin;
+    box-sizing: border-box;
+}
+
+.results-song-col {
+    width: 80%;
+    height: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    float: left;
+}
+
+.results-song-title {
+    height: 4.5vmin;
+    padding: 0.5vmin;
+    text-transform: uppercase;
+    font-size: 4vmin;
+    box-sizing: border-box;
+}
+
+.results-song-author {
+    height: 3vmin;
+    padding: 0.5vmin;
+    font-size: 2vmin;
+    box-sizing: border-box;
+}
+
+.results-song-col-right {
+    text-align: right;
+}
+
+.results-votes {
+    width: 20%;
+    height: 100%;
+    box-sizing: border-box;
+    float: left;
+}

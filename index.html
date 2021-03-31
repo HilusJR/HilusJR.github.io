@@ -5,6 +5,7 @@
     <title>Voter</title>
     <link rel="stylesheet" type="text/css" href="css/admin.css">
     <link rel="stylesheet" type="text/css" href="css/vote-screen.css">
+    <link rel="stylesheet" type="text/css" href="css/results.css">
     <link rel="stylesheet" type="text/css" href="css/fontello.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/admin.js"></script>
@@ -12,6 +13,11 @@
 </head>
 
 <body onload="checkPage(), loadSongsList(), loadChosenSongsList(), checkPage()">
+
+    <div id="navbar">
+        <div id="navbar-results" class="navbar-btn" onclick="goToScreen(this.id)">W</div>
+        <div id="navbar-admin" class="navbar-btn" onclick="goToScreen(this.id)">A</div>
+    </div>
 
     <!------------------------- ADMIN ---------------------------->
     <div id="admin" class="page">
@@ -35,12 +41,12 @@
         <div id="chosen-songs-container">
             <div id="chosen-songs-container-header">wybrane piosenki</div>
             <div id="chosen-songs-container-list"></div>
-            <div id="chosen-songs-container-vote" onclick="goToVoteScreen()">głosowanie</div>
+            <div id="chosen-songs-container-vote" onclick="goToScreen(this.id)">głosowanie</div>
         </div>
     </div>
 
     <div id="vote-screen" class="page">
-        <div id="vote-screen-header">zagłosuj na piosenkę</div>
+        <div id="vote-screen-header" class="header">zagłosuj na piosenkę</div>
         <div id="vote-screen-songs-container"></div>
         <div id="vote-screen-footer">
             <div id="vote-screen-chosen-song">Wybrano:
@@ -51,8 +57,21 @@
         </div>
     </div>
 
-
+    <div id="results-screen" class="page">
+        <div id="vote-screen-header" class="header">wyniki</div>
+        <div id="results-screen-col-left" class="results-screen-col">
+            <div id="results-screen-votes-amount"></div>
+            <div id="results-screen-songs-container"></div>
+        </div>
+        <div id="results-screen-col-right" class="results-screen-col"></div>
+    </div>
 
 </body>
 
 </html>
+
+<!-- to do:
+
+    prevent user from removing song during the voting (until you figure out how to not mix votes with songs after removing one while voting)
+
+-->

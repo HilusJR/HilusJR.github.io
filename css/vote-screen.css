@@ -3,6 +3,7 @@
 }
 
 #vote-screen-header {
+    position: relative;
     width: 100%;
     height: 8vmin;
     text-transform: uppercase;

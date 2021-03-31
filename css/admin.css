@@ -32,6 +32,28 @@ body {
     margin: 0 auto;
 }
 
+#navbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8%;
+    height: 8vmin;
+    box-sizing: border-box;
+    padding-top: 2.5vmin;
+    z-index: 1;
+}
+
+.navbar-btn {
+    width: 50%;
+    height: 3vmin;
+    font-size: 3vmin;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    float: left;
+}
+
 #songs-container {
     max-width: 1500px;
     width: 50vw;
