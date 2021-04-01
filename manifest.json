@@ -2,9 +2,9 @@
     "name": "Voter",
     "short_name": "Voter",
     "start_url": "/index.html",
-    "background_color": "#0099DC",
+    "background_color": "#1976D2",
     "theme_color": "#ffffff",
     "icons": [],
-    "display": "standalone",
+    "display": "fullscreen",
     "orientation": "landscape"
 }
