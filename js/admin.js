@@ -194,8 +194,15 @@ function transferBack(chosenSongsIndex) {
         chosenSongs = JSON.parse(localStorage["chosenSongs"]);
     } else chosenSongs = [];
 
+    let votedSongsVotes = localStorage.getItem("votedSongsVotes");
+    if (votedSongsVotes != null) {
+        votedSongsVotes = JSON.parse(localStorage["votedSongsVotes"]);
+    } else votedSongsVotes = [];
+
     chosenSongs.splice(chosenSongsIndex, 1);
+    votedSongsVotes.splice(chosenSongsIndex, 1);
     localStorage["chosenSongs"] = JSON.stringify(chosenSongs);
+    localStorage["votedSongsVotes"] = JSON.stringify(votedSongsVotes);
 
     chosenSongsAmount--;
     localStorage.setItem("chosenSongsAmount", chosenSongsAmount);

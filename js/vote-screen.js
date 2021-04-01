@@ -11,7 +11,6 @@ function chooseVoteScreenSong(songId) {
 
 function vote() {
     let votedSongsVotes = [];;
-    let chosenToVote = localStorage.getItem("chosenToVote");
 
     // CREATE ARRAY (NUMBER OF VOTES) WITH INDEX MATCHING CHOSEN SONGS ARRAY
     if (document.getElementById("vote-screen-chosen-song-title").innerHTML != "") {
