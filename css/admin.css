@@ -8,6 +8,15 @@
     --text: #fff;
 }
 
+html {
+    /* DISABLE SELECTING TEXT  */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -o-user-select: none;
+}
+
 body {
     margin: 0 !important;
     padding: 0 !important;

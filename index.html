@@ -10,9 +10,9 @@
 
     <link rel="manifest" href="/manifest.json">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/admin.js"></script>
-    <script type="text/javascript" src="js/vote-screen.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="js/admin.js"></script>
+    <script src="js/vote-screen.js"></script>
 </head>
 
 <body onload="checkPage(), loadSongsList(), loadChosenSongsList(), checkPage()">
@@ -26,8 +26,8 @@
     <div id="admin" class="page">
         <div id="songs-container">
             <div id="songs-container-nav">
-                <div id="songs-container-nav-list" class="songs-container-nav-btn" onclick="ChooseSongsContainer(this.id), loadSongsList()">lista piosenek</div>
-                <div id="songs-container-nav-add" class="songs-container-nav-btn" onclick="ChooseSongsContainer(this.id)">dodaj nową</div>
+                <div id="songs-container-nav-list" class="songs-container-nav-btn" onclick="ChooseSongsContainer(this.id)">lista piosenek</div>
+                <div id="songs-container-nav-add" class="songs-container-nav-btn" onclick="ChooseSongsContainer(this.id)">dodaj</div>
             </div>
 
             <div id="songs-container-list"></div>

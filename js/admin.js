@@ -1,107 +1,104 @@
+const CHARACTERS_SLICED_AMOUNT = 13
+const CHOSEN_SONG_CHARACTERS_SLICED_AMOUNT = 20
+const MAX_SONGS_AMOUNT = 10
+
+
 function checkPage() {
-    let admin = document.getElementById("admin");
-    let voteScreen = document.getElementById("vote-screen");
-    let resultsScreen = document.getElementById("results-screen");
-    let page = localStorage.getItem("page");
+    let page = localStorage.getItem("page")
     switch (page) {
         case "admin":
-            admin.style.display = "block";
-            voteScreen.style.display = "none";
-            resultsScreen.style.display = "none";
-            break;
+            setDisplayStyle("block", "none", "none")
+            break
         case "voteScreen":
-            admin.style.display = "none";
-            voteScreen.style.display = "block";
-            resultsScreen.style.display = "none";
-            break;
+            setDisplayStyle("none", "block", "none")
+            break
         case "resultsScreen":
-            admin.style.display = "none";
-            voteScreen.style.display = "none";
-            resultsScreen.style.display = "block";
-            loadVotedSongsList();
-            break;
+            setDisplayStyle("none", "none", "block")
+            loadVotedSongsList()
+            break
         default:
-            admin.style.display = "none";
-            voteScreen.style.display = "block";
-            resultsScreen.style.display = "none";
+            setDisplayStyle("none", "block", "none")
     }
 }
 
-function goToScreen(pageName) {
-    switch (pageName) {
+function goToScreen(clickedElemId) {
+    switch (clickedElemId) {
         case "navbar-admin":
-            document.getElementById("admin").style.display = "block";
-            document.getElementById("vote-screen").style.display = "none";
-            document.getElementById("results-screen").style.display = "none";
-            localStorage.setItem("page", "admin");
-            break;
+            setDisplayStyle("block", "none", "none")
+            localStorage.setItem("page", "admin")
+            break
         case "chosen-songs-container-vote":
-            document.getElementById("admin").style.display = "none";
-            document.getElementById("vote-screen").style.display = "block";
-            document.getElementById("results-screen").style.display = "none";
-            localStorage.setItem("page", "voteScreen");
-            loadChosenSongsList();
-            break;
+            setDisplayStyle("none", "block", "none")
+            localStorage.setItem("page", "voteScreen")
+            loadChosenSongsList()
+            break
         case "navbar-results":
-            document.getElementById("admin").style.display = "none";
-            document.getElementById("vote-screen").style.display = "none";
-            document.getElementById("results-screen").style.display = "block";
-            localStorage.setItem("page", "resultsScreen");
-            loadVotedSongsList();
+            setDisplayStyle("none", "none", "block")
+            localStorage.setItem("page", "resultsScreen")
+            loadVotedSongsList()
             break;
         default:
-            alert("Something went wrong, please contact developer!");
+            alert("Something went wrong, please contact developer!")
     }
 }
 
+function setDisplayStyle(adminState, voteScreenState, resultsScreenState) {
+    let admin = document.getElementById("admin")
+    let voteScreen = document.getElementById("vote-screen")
+    let resultsScreen = document.getElementById("results-screen")
+    admin.style.display = adminState
+    voteScreen.style.display = voteScreenState
+    resultsScreen.style.display = resultsScreenState
+}
 
 function ChooseSongsContainer(elem) {
-    const list = document.getElementById("songs-container-nav-list");
-    const add = document.getElementById("songs-container-nav-add");
-    const songsList = document.getElementById("songs-container-list");
-    const addSong = document.getElementById("songs-container-add-song");
+    const list = document.getElementById("songs-container-nav-list")
+    const add = document.getElementById("songs-container-nav-add")
+    const songsList = document.getElementById("songs-container-list")
+    const addSong = document.getElementById("songs-container-add-song")
     if (elem == "songs-container-nav-list") {
-        list.style.backgroundColor = "var(--primaryColor)";
-        list.style.color = "var(--text)";
-        add.style.backgroundColor = "var(--darkPrimaryColor)";
-        add.style.color = "var(--dividerColor)";
-        songsList.style.display = "block";
-        addSong.style.display = "none";
+        list.style.backgroundColor = "var(--primaryColor)"
+        list.style.color = "var(--text)"
+        add.style.backgroundColor = "var(--darkPrimaryColor)"
+        add.style.color = "var(--dividerColor)"
+        songsList.style.display = "block"
+        addSong.style.display = "none"
+        loadSongsList();
     } else if (elem == "songs-container-nav-add") {
-        add.style.backgroundColor = "var(--primaryColor)";
-        add.style.color = "var(--text)";
-        list.style.backgroundColor = "var(--darkPrimaryColor)";
-        list.style.color = "var(--dividerColor)";
-        songsList.style.display = "none";
-        addSong.style.display = "block";
+        add.style.backgroundColor = "var(--primaryColor)"
+        add.style.color = "var(--text)"
+        list.style.backgroundColor = "var(--darkPrimaryColor)"
+        list.style.color = "var(--dividerColor)"
+        songsList.style.display = "none"
+        addSong.style.display = "block"
     }
 }
 
 function addSong() {
-    let title = document.getElementById("title-input").value;
-    let author = document.getElementById("author-input").value;
-    let i = localStorage.getItem("song_i");
+    let title = document.getElementById("title-input").value
+    let author = document.getElementById("author-input").value
+    let i = localStorage.getItem("song_i")
     let song = {
         title: title,
         author: author
     }
     if (i == null) i = 0;
     if (title != "" && author != "") {
-        localStorage["song" + i] = JSON.stringify(song);
-        i++;
-        localStorage.setItem("song_i", i);
-        document.getElementById("title-input").value = "";
-        document.getElementById("author-input").value = "";
-    } else alert("Nie podano tytułu lub wykonawcy");
+        localStorage["song" + i] = JSON.stringify(song)
+        i++
+        localStorage.setItem("song_i", i)
+        document.getElementById("title-input").value = ""
+        document.getElementById("author-input").value = ""
+    } else alert("Nie podano tytułu lub wykonawcy")
 }
 
 function loadSongsList() {
     let songsList = "",
-        song;
-    let i = localStorage.getItem("song_i");
+        song
+    let i = localStorage.getItem("song_i")
     i--;
     for (i; i >= 0; i--) {
-        song = JSON.parse(localStorage["song" + i]);
+        song = JSON.parse(localStorage["song" + i])
         songsList += '<div id="song' + i + '" class="song">' +
             '<div class="song-col"><i class="demo-icon icon-music"></i></div>' +
             '<div class="song-col">' +
@@ -114,53 +111,72 @@ function loadSongsList() {
             '</div>' +
             '</div>'
     }
-    document.getElementById("songs-container-list").innerHTML = songsList;
+    document.getElementById("songs-container-list").innerHTML = songsList
 }
 
 function transferToChosen(songTransferId) {
-    let chosenSongsList = "",
-        chosenSongsAmount,
-        chosenSongs;
-    songTransferId = songTransferId.slice(13);
-    let i = parseInt(songTransferId);
-    song = JSON.parse(localStorage["song" + i]);
-    chosenSongsAmount = localStorage.getItem("chosenSongsAmount");
-    if (chosenSongsAmount == null) chosenSongsAmount = 0;
-    if (chosenSongsAmount <= 9) {
-        chosenSongsList =
-            '<div id="chosen-song' + i + '" class="chosen-song">' +
-            '<div class="chosen-song-col">' +
-            '<div id="chosen-song-title' + i + '" class="chosen-song-title">' + song.title + '</div>' +
-            '<div id="chosen-song-author' + i + '" class="chosen-song-author">' + song.author + '</div>' +
-            '</div>' +
-            '<div id="chosen-song-transfer' + chosenSongsAmount + '" class="chosen-song-transfer" onclick="transferBack(this.id)">X</div>' +
-            '</div>' + document.getElementById("chosen-songs-container-list").innerHTML;
-        document.getElementById("chosen-songs-container-list").innerHTML = chosenSongsList;
+    songTransferId = parseInt(songTransferId.slice(CHARACTERS_SLICED_AMOUNT))
+    song = JSON.parse(localStorage["song" + songTransferId])
+    let chosenSongsAmount = localStorage.getItem("chosenSongsAmount")
+    if (chosenSongsAmount == null) chosenSongsAmount = 0
+    if (chosenSongsAmount <= MAX_SONGS_AMOUNT - 1) {
+        createChosenSongElement(songTransferId, chosenSongsAmount, song)
+        saveChosenSongToArray(chosenSongsAmount, songTransferId)
+        chosenSongsAmount++
+        localStorage.setItem("chosenSongsAmount", chosenSongsAmount)
+    } else {
+        alert("Już dodano 10 piosenek!")
+    }
+}
 
-        // GET CHOSEN SONGS IDS AND SAVE THEM TO AN ARRAY IN LOCAL STORAGE
-        chosenSongs = localStorage.getItem("chosenSongs");
-        if (chosenSongs != null) {
-            chosenSongs = JSON.parse(localStorage["chosenSongs"]);
-        } else chosenSongs = [];
-        chosenSongs[chosenSongsAmount] = i;
-        localStorage["chosenSongs"] = JSON.stringify(chosenSongs);
+function setAttributes(el, attrs) {
+    for (var key in attrs) {
+        el.setAttribute(key, attrs[key])
+    }
+}
 
-        chosenSongsAmount++;
-        localStorage.setItem("chosenSongsAmount", chosenSongsAmount);
-    } else alert("Już dodano 10 piosenek!");
+function createChosenSongElement(songTransferId, chosenSongsAmount, song) {
+    let transferToChosenDiv
+    const divAttribute = ["chosen-song", "chosen-song-col", "chosen-song-title", "chosen-song-author", "chosen-song-transfer"]
+    for (i = 0; i <= 4; i++) {
+        transferToChosenDiv = document.createElement("div")
+        transferToChosenDiv.setAttribute("id", divAttribute[i])
+        transferToChosenDiv.setAttribute("class", divAttribute[i])
+        document.querySelector("#chosen-songs-container-list").append(transferToChosenDiv)
+        console.log(transferToChosenDiv)
+    }
+
+    const chosenSong = document.querySelector("#chosen-song")
+    const chosenSongCol = document.querySelector("#chosen-song-col")
+    const chosenSongTitle = document.querySelector("#chosen-song-title")
+    const chosenSongAuthor = document.querySelector("#chosen-song-author")
+    const chosenSongTransfer = document.querySelector("#chosen-song-transfer")
+    document.querySelector("#chosen-song").append(document.querySelector("#chosen-song-col"), document.querySelector("#chosen-song-transfer"))
+    document.querySelector("#chosen-song-col").append(document.querySelector("#chosen-song-title"), document.querySelector("#chosen-song-author"))
+
+    chosenSong.setAttribute("id", "chosen-song" + songTransferId)
+    chosenSongCol.setAttribute("id", "chosen-song-col" + songTransferId)
+    chosenSongTitle.innerText = song.title
+    chosenSongTitle.setAttribute("id", "chosen-song-title" + songTransferId)
+    chosenSongAuthor.innerText = song.author
+    chosenSongAuthor.setAttribute("id", "chosen-song-author" + songTransferId)
+    chosenSongTransfer.innerText = "X"
+    setAttributes(chosenSongTransfer, { "onclick": "transferBack(this.id)", "id": "chosen-song-transfer" + chosenSongsAmount })
+}
+
+function saveChosenSongToArray(chosenSongsAmount, songTransferId) {
+    let chosenSongs = getFromLocalStorage("chosenSongs")
+    chosenSongs[chosenSongsAmount] = songTransferId
+    localStorage["chosenSongs"] = JSON.stringify(chosenSongs)
 }
 
 function loadChosenSongsList() {
     let chosenSongsList = "",
-        voteScreenSongsList = "",
-        chosenSongs;
-    chosenSongs = localStorage.getItem("chosenSongs");
-    if (chosenSongs != null) {
-        chosenSongs = JSON.parse(localStorage["chosenSongs"]);
-    } else chosenSongs = [];
+        voteScreenSongsList = ""
+    let chosenSongs = getFromLocalStorage("chosenSongs")
 
     for (i = chosenSongs.length - 1; i >= 0; i--) {
-        song = JSON.parse(localStorage["song" + chosenSongs[i]]);
+        song = JSON.parse(localStorage["song" + chosenSongs[i]])
         chosenSongsList +=
             '<div id="chosen-song' + chosenSongs[i] + '" class="chosen-song">' +
             '<div class="chosen-song-col">' +
@@ -168,7 +184,7 @@ function loadChosenSongsList() {
             '<div id="chosen-song-author' + chosenSongs[i] + '" class="chosen-song-author">' + song.author + '</div>' +
             '</div>' +
             '<div id="chosen-song-transfer' + i + '" class="chosen-song-transfer"  onclick="transferBack(this.id)">X</div>' +
-            '</div>';
+            '</div>'
         voteScreenSongsList += '<div id="vote-screen-song' + chosenSongs[i] + '" class="vote-screen-song">' +
             '<div class="vote-screen-song-col"><i class="demo-icon icon-music"></i></div>' +
             '<div class="vote-screen-song-col">' +
@@ -181,30 +197,25 @@ function loadChosenSongsList() {
             '<p id="chosenSongsIndex" style="display:none;">' + i + '</p>' + '</div>' +
             '</div>'
     }
-    document.getElementById("chosen-songs-container-list").innerHTML = chosenSongsList;
-    document.getElementById("vote-screen-songs-container").innerHTML = voteScreenSongsList;
+    document.getElementById("chosen-songs-container-list").innerHTML = chosenSongsList
+    document.getElementById("vote-screen-songs-container").innerHTML = voteScreenSongsList
+}
+
+function getFromLocalStorage(arrayKey) {
+    return localStorage.getItem(arrayKey) != null ? JSON.parse(localStorage[arrayKey]) : []
 }
 
 function transferBack(chosenSongsIndex) {
-    chosenSongsIndex = chosenSongsIndex.slice(20);
+    chosenSongsIndex = chosenSongsIndex.slice(CHOSEN_SONG_CHARACTERS_SLICED_AMOUNT)
+    let chosenSongsAmount = localStorage.getItem("chosenSongsAmount")
+    let chosenSongs = getFromLocalStorage("chosenSongs")
+    let votedSongsVotes = getFromLocalStorage("votedSongsVotes")
+    chosenSongs.splice(chosenSongsIndex, 1)
+    votedSongsVotes.splice(chosenSongsIndex, 1)
+    localStorage["chosenSongs"] = JSON.stringify(chosenSongs)
+    localStorage["votedSongsVotes"] = JSON.stringify(votedSongsVotes)
 
-    let chosenSongsAmount = localStorage.getItem("chosenSongsAmount"),
-        chosenSongs = localStorage.getItem("chosenSongs");
-    if (chosenSongs != null) {
-        chosenSongs = JSON.parse(localStorage["chosenSongs"]);
-    } else chosenSongs = [];
-
-    let votedSongsVotes = localStorage.getItem("votedSongsVotes");
-    if (votedSongsVotes != null) {
-        votedSongsVotes = JSON.parse(localStorage["votedSongsVotes"]);
-    } else votedSongsVotes = [];
-
-    chosenSongs.splice(chosenSongsIndex, 1);
-    votedSongsVotes.splice(chosenSongsIndex, 1);
-    localStorage["chosenSongs"] = JSON.stringify(chosenSongs);
-    localStorage["votedSongsVotes"] = JSON.stringify(votedSongsVotes);
-
-    chosenSongsAmount--;
-    localStorage.setItem("chosenSongsAmount", chosenSongsAmount);
+    chosenSongsAmount--
+    localStorage.setItem("chosenSongsAmount", chosenSongsAmount)
     loadChosenSongsList();
 }
