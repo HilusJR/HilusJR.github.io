@@ -9,14 +9,38 @@
     {
       "uid": "e7ab5637425cce7dd2176302ddaf1c08",
       "css": "music",
-      "code": 57459,
+      "code": 59392,
       "src": "elusive"
     },
     {
       "uid": "ad6b3fbb5324abe71a9c0b6609cbb9f1",
       "css": "right-big",
-      "code": 8594,
+      "code": 59393,
       "src": "fontawesome"
+    },
+    {
+      "uid": "6a06892e76b81e023da6ddfb38a26b37",
+      "css": "doc-text",
+      "code": 59394,
+      "src": "typicons"
+    },
+    {
+      "uid": "74415da8e36ed0afcea9b2b1454f4176",
+      "css": "cancel-circled2",
+      "code": 59395,
+      "src": "elusive"
+    },
+    {
+      "uid": "0e26e70b4aa537cc206f41b21dcf2fcc",
+      "css": "lock",
+      "code": 59396,
+      "src": "elusive"
+    },
+    {
+      "uid": "7997220c4eb58edae98e04de570089c2",
+      "css": "lock-1",
+      "code": 62738,
+      "src": "mfglabs"
     }
   ]
 }

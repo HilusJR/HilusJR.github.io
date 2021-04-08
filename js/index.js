@@ -1,116 +1,74 @@
-function ChooseSongsContainer(elem) {
-    const list = document.getElementById("songs-container-nav-list");
-    const add = document.getElementById("songs-container-nav-add");
-    const songsList = document.getElementById("songs-container-list");
-    const addSong = document.getElementById("songs-container-add-song");
-    if (elem == "songs-container-nav-list") {
-        list.style.backgroundColor = "var(--primaryColor)";
-        list.style.color = "var(--text)";
-        add.style.backgroundColor = "var(--darkPrimaryColor)";
-        add.style.color = "var(--dividerColor)";
-        songsList.style.display = "block";
-        addSong.style.display = "none";
-    } else if (elem == "songs-container-nav-add") {
-        add.style.backgroundColor = "var(--primaryColor)";
-        add.style.color = "var(--text)";
-        list.style.backgroundColor = "var(--darkPrimaryColor)";
-        list.style.color = "var(--dividerColor)";
-        songsList.style.display = "none";
-        addSong.style.display = "block";
+function checkPage() {
+    let page = localStorage.getItem("page")
+    switch (page) {
+        case "admin":
+            setDisplayStyle("block", "none", "none")
+            break
+        case "voteScreen":
+            setDisplayStyle("none", "block", "none")
+            break
+        case "resultsScreen":
+            setDisplayStyle("none", "none", "block")
+            loadVotedSongsList()
+            break
+        default:
+            setDisplayStyle("none", "block", "none")
     }
 }
 
-function addSong() {
-    let title = document.getElementById("title-input").value;
-    let author = document.getElementById("author-input").value;
-    let i = localStorage.getItem("song_i");
-    let song = {
-        title: title,
-        author: author
+function goToScreen(clickedElemId) {
+    switch (clickedElemId) {
+        case "navbar-admin":
+            setDisplayStyle("block", "none", "none")
+            localStorage.setItem("page", "admin")
+            break
+        case "chosen-songs-container-vote":
+            setDisplayStyle("none", "block", "none")
+            localStorage.setItem("page", "voteScreen")
+            loadChosenSongsList()
+            break
+        case "navbar-results":
+            setDisplayStyle("none", "none", "block")
+            localStorage.setItem("page", "resultsScreen")
+            loadVotedSongsList()
+            break
+        default:
+            alert("Something went wrong, please contact developer!")
     }
-    if (i == null) i = 0;
-    if (title != "" && author != "") {
-        localStorage["song" + i] = JSON.stringify(song);
-        i++;
-        localStorage.setItem("song_i", i);
-        document.getElementById("title-input").value = "";
-        document.getElementById("author-input").value = "";
-    } else alert("Nie podano tytułu lub wykonawcy");
 }
 
-function loadSongsList() {
-    let songsList = "",
-        song;
-    let i = localStorage.getItem("song_i");
-    i--;
-    for (i; i >= 0; i--) {
-        song = JSON.parse(localStorage["song" + i]);
-        songsList += '<div id="song' + i + '" class="song">' +
-            '<div class="song-col"><i class="demo-icon icon-music"></i></div>' +
-            '<div class="song-col">' +
-            '<div id="song-title' + i + '" class="song-title">' + song.title + '</div>' +
-            '<div id="song-author' + i + '" class="song-author">' + song.author + '</div>' +
-            '</div>' +
-            '<div class="song-col">' +
-            '<div id="song-transfer' + i + '" class="song-transfer" onclick="transferToChosen(this.id)">' +
-            '<i class="demo-icon icon-right-big"></i></div>' +
-            '</div>' +
-            '</div>'
-    }
-    document.getElementById("songs-container-list").innerHTML = songsList;
+function setDisplayStyle(adminState, voteScreenState, resultsScreenState) {
+    const admin = document.getElementById("admin")
+    const voteScreen = document.getElementById("vote-screen")
+    const resultsScreen = document.getElementById("results-screen")
+    admin.style.display = adminState
+    voteScreen.style.display = voteScreenState
+    resultsScreen.style.display = resultsScreenState
 }
 
-function transferToChosen(songTransferId) {
-    let chosenSongsList = "",
-        chosenSongsAmount,
-        chosenSongs;
-    songTransferId = songTransferId.slice(13);
-    let i = parseInt(songTransferId);
-    song = JSON.parse(localStorage["song" + i]);
-    chosenSongsAmount = localStorage.getItem("chosenSongsAmount");
-    if (chosenSongsAmount == null) chosenSongsAmount = 0;
-    if (chosenSongsAmount <= 9) {
-        chosenSongsList =
-            '<div id="chosen-song' + i + '" class="chosen-song">' +
-            '<div class="chosen-song-col">' +
-            '<div id="chosen-song-title' + i + '" class="chosen-song-title">' + song.title + '</div>' +
-            '<div id="chosen-song-author' + i + '" class="chosen-song-author">' + song.author + '</div>' +
-            '</div>' +
-            '<div class="chosen-song-transfer' + i + '"></div>' +
-            '</div>' + document.getElementById("chosen-songs-container-list").innerHTML;
-        document.getElementById("chosen-songs-container-list").innerHTML = chosenSongsList;
+function actionFeedback(action) {
+    if (action == null) return
 
-        // GET CHOSEN SONGS IDS AND SAVE THEM TO AN ARRAY IN LOCAL STORAGE
-        chosenSongs = localStorage.getItem("chosenSongs");
-        if (chosenSongs != null) {
-            chosenSongs = JSON.parse(localStorage["chosenSongs"]);
-        } else chosenSongs = [];
-        chosenSongs[chosenSongsAmount] = i;
-        localStorage["chosenSongs"] = JSON.stringify(chosenSongs);
-
-        chosenSongsAmount++;
-        localStorage.setItem("chosenSongsAmount", chosenSongsAmount);
-    } else alert("Już dodano 10 piosenek!");
-}
-
-function loadChosenSongsList() {
-    let chosenSongsList = "",
-        chosenSongs;
-    chosenSongs = localStorage.getItem("chosenSongs");
-    if (chosenSongs != null) {
-        chosenSongs = JSON.parse(localStorage["chosenSongs"]);
-    } else chosenSongs = [];
-
-    for (i = chosenSongs.length - 1; i >= 0; i--) {
-        song = JSON.parse(localStorage["song" + chosenSongs[i]]);
-        chosenSongsList +=
-            '<div id="chosen-song' + chosenSongs[i] + '" class="chosen-song">' +
-            '<div class="chosen-song-col">' +
-            '<div id="chosen-song-title' + chosenSongs[i] + '" class="chosen-song-title">' + song.title + '</div>' +
-            '<div id="chosen-song-author' + chosenSongs[i] + '" class="chosen-song-author">' + song.author + '</div>' +
-            '</div>' +
-            '<div class="chosen-song-transfer' + chosenSongs[i] + '"></div>' +
-            '</div>';
+    const feedbackBackground = document.querySelector("#feedback-background")
+    const feedbackWindow = document.querySelector("#feedback-window")
+    feedbackBackground.style.display = "flex"
+    switch (action) {
+        case "add":
+            feedbackWindow.innerText = "Piosenka została pomyślnie dodana."
+            break;
+        case "add-error":
+            feedbackWindow.innerText = "Nie podano tytułu lub wykonawcy."
+            break;
+        case "vote":
+            feedbackWindow.innerText = "Dziękujemy za oddanie głosu."
+            break;
+        case "vote-error":
+            feedbackWindow.innerText = "Nie wybrano piosenki!"
+            break;
+        default:
+            return
     }
-    document.getElementById("chosen-songs-container-list").innerHTML = chosenSongsList;
+    setTimeout(() => {
+        feedbackBackground.style.display = "none"
+    }, 3000)
 }

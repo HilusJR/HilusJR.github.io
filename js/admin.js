@@ -3,53 +3,6 @@ const CHOSEN_SONG_CHARACTERS_SLICED_AMOUNT = 20
 const MAX_SONGS_AMOUNT = 10
 
 
-function checkPage() {
-    let page = localStorage.getItem("page")
-    switch (page) {
-        case "admin":
-            setDisplayStyle("block", "none", "none")
-            break
-        case "voteScreen":
-            setDisplayStyle("none", "block", "none")
-            break
-        case "resultsScreen":
-            setDisplayStyle("none", "none", "block")
-            loadVotedSongsList()
-            break
-        default:
-            setDisplayStyle("none", "block", "none")
-    }
-}
-
-function goToScreen(clickedElemId) {
-    switch (clickedElemId) {
-        case "navbar-admin":
-            setDisplayStyle("block", "none", "none")
-            localStorage.setItem("page", "admin")
-            break
-        case "chosen-songs-container-vote":
-            setDisplayStyle("none", "block", "none")
-            localStorage.setItem("page", "voteScreen")
-            loadChosenSongsList()
-            break
-        case "navbar-results":
-            setDisplayStyle("none", "none", "block")
-            localStorage.setItem("page", "resultsScreen")
-            loadVotedSongsList()
-            break;
-        default:
-            alert("Something went wrong, please contact developer!")
-    }
-}
-
-function setDisplayStyle(adminState, voteScreenState, resultsScreenState) {
-    let admin = document.getElementById("admin")
-    let voteScreen = document.getElementById("vote-screen")
-    let resultsScreen = document.getElementById("results-screen")
-    admin.style.display = adminState
-    voteScreen.style.display = voteScreenState
-    resultsScreen.style.display = resultsScreenState
-}
 
 function ChooseSongsContainer(elem) {
     const list = document.getElementById("songs-container-nav-list")
@@ -89,7 +42,8 @@ function addSong() {
         localStorage.setItem("song_i", i)
         document.getElementById("title-input").value = ""
         document.getElementById("author-input").value = ""
-    } else alert("Nie podano tytułu lub wykonawcy")
+        actionFeedback("add")
+    } else actionFeedback("add-error")
 }
 
 function loadSongsList() {
@@ -143,7 +97,6 @@ function createChosenSongElement(songTransferId, chosenSongsAmount, song) {
         transferToChosenDiv.setAttribute("id", divAttribute[i])
         transferToChosenDiv.setAttribute("class", divAttribute[i])
         document.querySelector("#chosen-songs-container-list").append(transferToChosenDiv)
-        console.log(transferToChosenDiv)
     }
 
     const chosenSong = document.querySelector("#chosen-song")
@@ -160,7 +113,7 @@ function createChosenSongElement(songTransferId, chosenSongsAmount, song) {
     chosenSongTitle.setAttribute("id", "chosen-song-title" + songTransferId)
     chosenSongAuthor.innerText = song.author
     chosenSongAuthor.setAttribute("id", "chosen-song-author" + songTransferId)
-    chosenSongTransfer.innerText = "X"
+    chosenSongTransfer.innerHTML = '<i class="demo-icon icon-cancel-circled2"></i>'
     setAttributes(chosenSongTransfer, { "onclick": "transferBack(this.id)", "id": "chosen-song-transfer" + chosenSongsAmount })
 }
 
@@ -183,7 +136,7 @@ function loadChosenSongsList() {
             '<div id="chosen-song-title' + chosenSongs[i] + '" class="chosen-song-title">' + song.title + '</div>' +
             '<div id="chosen-song-author' + chosenSongs[i] + '" class="chosen-song-author">' + song.author + '</div>' +
             '</div>' +
-            '<div id="chosen-song-transfer' + i + '" class="chosen-song-transfer"  onclick="transferBack(this.id)">X</div>' +
+            '<div id="chosen-song-transfer' + i + '" class="chosen-song-transfer"  onclick="transferBack(this.id)"><i class="demo-icon icon-cancel-circled2"></i></div>' +
             '</div>'
         voteScreenSongsList += '<div id="vote-screen-song' + chosenSongs[i] + '" class="vote-screen-song">' +
             '<div class="vote-screen-song-col"><i class="demo-icon icon-music"></i></div>' +

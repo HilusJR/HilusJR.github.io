@@ -1,3 +1,7 @@
 
-.icon-right-big:before { content: '\2192'; } /* '→' */
-.icon-music:before { content: '\e073'; } /* '' */
+.icon-music:before { content: '\e800'; } /* '' */
+.icon-right-big:before { content: '\e801'; } /* '' */
+.icon-doc-text:before { content: '\e802'; } /* '' */
+.icon-cancel-circled2:before { content: '\e803'; } /* '' */
+.icon-lock:before { content: '\e804'; } /* '' */
+.icon-lock-1:before { content: '\f512'; } /* '' */

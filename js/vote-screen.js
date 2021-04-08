@@ -28,13 +28,14 @@ function vote() {
             votedSongsVotes.fill(0)
         }
         votedSongsVotes.length = chosenSongs.length
-        for (votes in votedSongsVotes) {
-            if (votes == null) votes = 0
+        for (i = 0; i < votedSongsVotes.length; i++) {
+            if (votedSongsVotes[i] == null) votedSongsVotes[i] = 0
         }
         votedSongsVotes[votedIndex] += 1
+            //actionFeedback("vote")
 
         localStorage["votedSongsVotes"] = JSON.stringify(votedSongsVotes)
-    } else alert("Nie wybrano piosenki")
+    } else actionFeedback("vote-error")
 }
 
 function isEqual(element) {
@@ -55,13 +56,19 @@ function loadVotedSongsList() {
         votedSongsVotes = JSON.parse(localStorage["votedSongsVotes"])
     } else votedSongsVotes = []
 
-    for (votes in votedSongsVotes) {
-        votesAmount += votes
+    for (i = 0; i < votedSongsVotes.length; i++) {
+        votesAmount += votedSongsVotes[i]
     }
+
     document.getElementById("results-screen-votes-amount").innerText = "Ilość oddanych głosów: " + votesAmount
+
 
     for (i = chosenSongs.length - 1; i >= 0; i--) {
         song = JSON.parse(localStorage["song" + chosenSongs[i]])
+        if (votedSongsVotes[i] == null) votedSongsVotes[i] = 0;
+        if (votesAmount == 0) votesAmount = 1
+        let result = Math.round(votedSongsVotes[i] / votesAmount * 100)
+
         resultsSongsList +=
             '<div id="results-song' + chosenSongs[i] + '" class="results-song">' +
             '<div class="results-song-col">' +
@@ -69,7 +76,7 @@ function loadVotedSongsList() {
             '<div id="results-song-author' + chosenSongs[i] + '" class="results-song-author">' + song.author + '</div>' +
             '</div>' +
             '<div id="results-votes' + i + ' class="results-votes">' +
-            '<div id="results-song-percentage' + chosenSongs[i] + '" class="results-song-title results-song-col-right">' + Math.round(votedSongsVotes[i] / votesAmount * 100) + '%</div>' +
+            '<div id="results-song-percentage' + chosenSongs[i] + '" class="results-song-title results-song-col-right">' + result + '%</div>' +
             '<div id="results-song-votes-amount' + chosenSongs[i] + '" class="results-song-author results-song-col-right">Oddane głosy: ' + votedSongsVotes[i] + '</div>' +
             '</div>' +
             '</div>'

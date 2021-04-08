@@ -1,6 +1,15 @@
 Font license info
 
 
+## Elusive
+
+   Copyright (C) 2013 by Aristeides Stathopoulos
+
+   Author:    Aristeides Stathopoulos
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://aristeides.com/
+
+
 ## Font Awesome
 
    Copyright (C) 2016 by Dave Gandy
@@ -10,12 +19,21 @@ Font license info
    Homepage:  http://fortawesome.github.com/Font-Awesome/
 
 
-## Elusive
+## Typicons
 
-   Copyright (C) 2013 by Aristeides Stathopoulos
+   (c) Stephen Hutchings 2012
 
-   Author:    Aristeides Stathopoulos
+   Author:    Stephen Hutchings
    License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://aristeides.com/
+   Homepage:  http://typicons.com/
+
+
+## MFG Labs
+
+   Copyright (C) 2012 by Daniel Bruce
+
+   Author:    MFG Labs
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  http://www.mfglabs.com/
 
 
