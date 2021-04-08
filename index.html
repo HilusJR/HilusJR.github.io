@@ -12,22 +12,32 @@
 
     <link rel="manifest" href="/manifest.json">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/vote-screen.js"></script>
 </head>
 
-<body onload="checkPage(), loadSongsList(), loadChosenSongsList(), checkPage()">
+<body onload="checkPage(), loadSongsList(), loadChosenSongsList()">
 
     <div id="navbar">
         <div id="navbar-results" class="navbar-btn" onclick="goToScreen(this.id)"><i class="demo-icon icon-doc-text"></i></div>
-        <div id="navbar-admin" class="navbar-btn" onclick="goToScreen(this.id)"><i class="demo-icon icon-lock-1"></i></div>
+        <div id="navbar-admin" class="navbar-btn" onclick="login()"><i class="demo-icon icon-lock-1"></i></div>
     </div>
 
-    <div id="feedback-background">
-        <div id="feedback-window"></div>
+    <div id="login-background" class="overlay-background">
+        <div id="login-window" class="overlay-window">
+            <p>Podaj hasło</p>
+            <input type="text" id="password">
+            <div class="login-btn" onclick="exitLogin()">ANULUJ</div>
+            <div class="login-btn" onclick="checkPassword()">DALEJ</div>
+        </div>
     </div>
+
+    <div id="feedback-background" class="overlay-background">
+        <div id="feedback-window" class="overlay-window"></div>
+    </div>
+
+
 
     <!------------------------- ADMIN ---------------------------->
     <div id="admin" class="page">

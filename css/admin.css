@@ -64,18 +64,17 @@ body {
     float: left;
 }
 
-#feedback-background {
+.overlay-background {
     position: absolute;
     height: 100vh;
     width: 100%;
     background: rgba(0, 0, 0, .8);
-    display: none;
     justify-content: center;
     align-items: center;
     z-index: 100;
 }
 
-#feedback-window {
+.overlay-window {
     box-sizing: border-box;
     width: 40%;
     background-color: white;
@@ -85,6 +84,48 @@ body {
     padding: 17.5vmin 3vmin;
     font-size: 5vmin;
     color: var(--primaryText);
+}
+
+#feedback-background {
+    display: none;
+}
+
+#login-background {
+    display: none;
+}
+
+#login-window {
+    padding: 3vmin;
+}
+
+p {
+    box-sizing: border-box;
+    height: 3vmin;
+    width: 100%;
+    font-size: 3vmin;
+}
+
+#password {
+    box-sizing: border-box;
+    width: 90%;
+    height: 4vmin;
+    margin: 1vmin 5% 3vmin 5%;
+    font-size: 3vmin;
+}
+
+.login-btn {
+    box-sizing: border-box;
+    width: 40%;
+    height: 4vmin;
+    background: var(--primaryColor);
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
+    font-size: 3vmin;
+    text-align: center;
+    padding: 0.5vmin 0;
+    margin: 1vmin 5%;
+    float: left;
 }
 
 #songs-container {

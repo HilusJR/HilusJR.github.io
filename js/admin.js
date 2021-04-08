@@ -1,6 +1,29 @@
 const CHARACTERS_SLICED_AMOUNT = 13
 const CHOSEN_SONG_CHARACTERS_SLICED_AMOUNT = 20
 const MAX_SONGS_AMOUNT = 10
+const PASSWORD = "test"
+
+function login() {
+    const page = localStorage.getItem("page")
+    if (page == null || page == "admin") return
+    const loginBackground = document.querySelector("#login-background")
+    loginBackground.style.display = "flex"
+}
+
+function exitLogin() {
+    const loginBackground = document.querySelector("#login-background")
+    loginBackground.style.display = "none"
+}
+
+function checkPassword() {
+    let word = document.querySelector("#password").value
+    if (word == null) return
+    if (word == PASSWORD) {
+        goToScreen("navbar-admin")
+        exitLogin()
+    } else actionFeedback("password-error")
+    document.querySelector("#password").value = ""
+}
 
 
 

@@ -66,6 +66,9 @@ function actionFeedback(action) {
         case "vote-error":
             feedbackWindow.innerText = "Nie wybrano piosenki!"
             break;
+        case "password-error":
+            feedbackWindow.innerText = "Niepoprawne"
+            break;
         default:
             return
     }
