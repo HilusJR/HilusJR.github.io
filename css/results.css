@@ -16,6 +16,19 @@
     padding-top: 2.5vmin;
 }
 
+#back-to-vote-screen {
+    position: absolute;
+    top: 1vmin;
+    left: 1vmin;
+    background: var(--accentColor);
+    color: var(--text);
+    border-radius: 10px;
+    font-size: 2vmin;
+    padding: 2vmin 1vmin;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
 .results-screen-col {
     height: calc(100vh - 8vmin);
     box-sizing: border-box;

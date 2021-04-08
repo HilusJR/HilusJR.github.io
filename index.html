@@ -3,6 +3,8 @@
 
 <head>
     <title>Voter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <link rel="stylesheet" type="text/css" href="css/admin.css">
     <link rel="stylesheet" type="text/css" href="css/vote-screen.css">
     <link rel="stylesheet" type="text/css" href="css/results.css">
@@ -66,7 +68,9 @@
     </div>
 
     <div id="results-screen" class="page">
-        <div id="vote-screen-header" class="header">wyniki</div>
+        <div id="vote-screen-header" class="header">wyniki
+            <div id="back-to-vote-screen" onclick="goToScreen(this.id)">wróć do głosowania</div>
+        </div>
         <div id="results-screen-col-left" class="results-screen-col">
             <div id="results-screen-votes-amount"></div>
             <div id="results-screen-songs-container"></div>

@@ -23,6 +23,7 @@ function goToScreen(clickedElemId) {
             localStorage.setItem("page", "admin")
             break
         case "chosen-songs-container-vote":
+        case "back-to-vote-screen":
             setDisplayStyle("none", "block", "none")
             localStorage.setItem("page", "voteScreen")
             loadChosenSongsList()

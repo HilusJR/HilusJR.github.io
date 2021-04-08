@@ -32,7 +32,7 @@ function vote() {
             if (votedSongsVotes[i] == null) votedSongsVotes[i] = 0
         }
         votedSongsVotes[votedIndex] += 1
-            //actionFeedback("vote")
+        actionFeedback("vote")
 
         localStorage["votedSongsVotes"] = JSON.stringify(votedSongsVotes)
     } else actionFeedback("vote-error")
