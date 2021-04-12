@@ -1,7 +1,7 @@
 const CHARACTERS_SLICED_AMOUNT = 13
 const CHOSEN_SONG_CHARACTERS_SLICED_AMOUNT = 20
 const MAX_SONGS_AMOUNT = 10
-const PASSWORD = "test"
+const PASSWORD = ""
 
 function login() {
     const page = localStorage.getItem("page")
@@ -36,7 +36,7 @@ function ChooseSongsContainer(elem) {
         list.style.backgroundColor = "var(--primaryColor)"
         list.style.color = "var(--text)"
         add.style.backgroundColor = "var(--darkPrimaryColor)"
-        add.style.color = "var(--dividerColor)"
+        add.style.color = "var(--secondaryText)"
         songsList.style.display = "block"
         addSong.style.display = "none"
         loadSongsList();
@@ -44,7 +44,7 @@ function ChooseSongsContainer(elem) {
         add.style.backgroundColor = "var(--primaryColor)"
         add.style.color = "var(--text)"
         list.style.backgroundColor = "var(--darkPrimaryColor)"
-        list.style.color = "var(--dividerColor)"
+        list.style.color = "var(--secondaryText)"
         songsList.style.display = "none"
         addSong.style.display = "block"
     }
