@@ -47,6 +47,12 @@
       "css": "left-big",
       "code": 59397,
       "src": "fontawesome"
+    },
+    {
+      "uid": "csuoy0rqoun3unhsgjoy2uumpldzbfmt",
+      "css": "trash",
+      "code": 59398,
+      "src": "typicons"
     }
   ]
 }

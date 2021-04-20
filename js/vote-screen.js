@@ -64,7 +64,12 @@ function loadVotedSongsList() {
 
 
     for (i = chosenSongs.length - 1; i >= 0; i--) {
-        song = JSON.parse(localStorage["song" + chosenSongs[i]])
+        try {
+            song = JSON.parse(localStorage["song" + chosenSongs[i]])
+        } catch (err) {
+            continue
+        }
+
         if (votedSongsVotes[i] == null) votedSongsVotes[i] = 0;
         if (votesAmount == 0) votesAmount = 1
         let result = Math.round(votedSongsVotes[i] / votesAmount * 100)

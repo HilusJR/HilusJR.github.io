@@ -60,6 +60,9 @@ function actionFeedback(action) {
         case "add-error":
             feedbackWindow.innerText = "Nie podano tytułu lub wykonawcy."
             break;
+        case "add-error-white-spaces":
+            feedbackWindow.innerText = "Lepiej będzie jak pojawi się chociaż jedna litera"
+            break;
         case "vote":
             feedbackWindow.innerText = "Dziękujemy za oddanie głosu."
             break;
@@ -78,7 +81,7 @@ function actionFeedback(action) {
 }
 
 
-
+/*
 function localStorageSize() {
     var data = '';
 
@@ -95,4 +98,4 @@ function localStorageSize() {
 
     console.log(data ? '\n' + 'Total space used: ' + ((data.length * 16) / (8 * 1024)).toFixed(2) + ' KB' : 'Empty (0 KB)');
     console.log(data ? 'Approx. space remaining: ' + (5120 - ((data.length * 16) / (8 * 1024)).toFixed(2)) + ' KB' : '5 MB');
-};
+};*/

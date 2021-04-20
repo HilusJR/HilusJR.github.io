@@ -1,4 +1,5 @@
 const CHARACTERS_SLICED_AMOUNT = 13
+const DELETE_SONG_CHARACTERS_SLICED_AMOUNT = 11
 const CHOSEN_SONG_CHARACTERS_SLICED_AMOUNT = 20
 const MAX_SONGS_AMOUNT = 10
 const PASSWORD = ""
@@ -60,6 +61,7 @@ function addSong() {
     }
     if (i == null) i = 0;
     if (title != "" && author != "") {
+        if (title.trim().length == 0 || author.trim().length == 0) return actionFeedback("add-error-white-spaces")
         localStorage["song" + i] = JSON.stringify(song)
         i++
         localStorage.setItem("song_i", i)
@@ -69,21 +71,58 @@ function addSong() {
     } else actionFeedback("add-error")
 }
 
-function loadSongsList() {
-    let songsList = "",
-        song
+function deleteSong(deletedSongId) {
     let i = localStorage.getItem("song_i")
-    i--;
+    deletedSongId = parseInt(deletedSongId.slice(DELETE_SONG_CHARACTERS_SLICED_AMOUNT))
+    localStorage.removeItem("song" + deletedSongId)
+    localStorage.setItem("song_i", i)
+    deleteFromArrays(deletedSongId)
+    loadSongsList()
+}
+
+function deleteFromArrays(deletedSongId) {
+    let chosenSongs = getFromLocalStorage("chosenSongs")
+    let votedSongsVotes = getFromLocalStorage("votedSongsVotes")
+    let chosenSongsAmount = getFromLocalStorage("chosenSongsAmount")
+
+    // let index = chosenSongs.indexOf(deleteSongId)
+    // chosenSongs.splice(index, 1)
+    // console.log(chosenSongs.splice(index, 1))
+    // votedSongsVotes.splice(index, 1)
+    for (i = 0; i < chosenSongs.length; i++) {
+        var chosenSongsFiltered = chosenSongs.filter(value => {
+            return value != deletedSongId
+        })
+    }
+    console.log(chosenSongsFiltered)
+    chosenSongsAmount = chosenSongsFiltered.length
+
+    localStorage.setItem("chosenSongsAmount", chosenSongsAmount)
+    localStorage["chosenSongs"] = JSON.stringify(chosenSongsFiltered)
+    localStorage["votedSongsVotes"] = JSON.stringify(votedSongsVotes)
+    loadChosenSongsList()
+}
+
+function loadSongsList() {
+    let songsList = ""
+    let i = localStorage.getItem("song_i")
+    i--
     for (i; i >= 0; i--) {
-        song = JSON.parse(localStorage["song" + i])
-        songsList += '<div id="song' + i + '" class="song">' +
+        try {
+            var song = JSON.parse(localStorage["song" + i])
+        } catch (err) {
+            continue
+        }
+        songsList += `<div id="song${i}" class="song">` +
             '<div class="song-col"><i class="demo-icon icon-music"></i></div>' +
             '<div class="song-col">' +
-            '<div id="song-title' + i + '" class="song-title">' + song.title + '</div>' +
-            '<div id="song-author' + i + '" class="song-author">' + song.author + '</div>' +
+            `<div id="song-title${i}" class="song-title">${song.title}</div>` +
+            `<div id="song-author${i}" class="song-author">${song.author}</div>` +
             '</div>' +
             '<div class="song-col">' +
-            '<div id="song-transfer' + i + '" class="song-transfer" onclick="transferToChosen(this.id)">' +
+            `<div id="song-delete${i}" class="song-delete" onclick="deleteSong(this.id)">` +
+            '<i class="demo-icon icon-trash"></i></div>' +
+            `<div id="song-transfer${i}" class="song-transfer" onclick="transferToChosen(this.id)">` +
             '<i class="demo-icon icon-right-big"></i></div>' +
             '</div>' +
             '</div>'
@@ -152,7 +191,11 @@ function loadChosenSongsList() {
     let chosenSongs = getFromLocalStorage("chosenSongs")
 
     for (i = chosenSongs.length - 1; i >= 0; i--) {
-        song = JSON.parse(localStorage["song" + chosenSongs[i]])
+        try {
+            song = JSON.parse(localStorage["song" + chosenSongs[i]])
+        } catch (err) {
+            continue
+        }
         chosenSongsList +=
             '<div id="chosen-song' + chosenSongs[i] + '" class="chosen-song">' +
             '<div class="chosen-song-col">' +

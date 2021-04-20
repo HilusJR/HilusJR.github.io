@@ -216,7 +216,14 @@ p {
     color: var(--secondaryText)
 }
 
+.song-delete {
+    margin: -3vmin 0 1vmin 0;
+    font-size: 3vmin;
+    cursor: pointer;
+}
+
 .song-transfer {
+    font-size: 5vmin;
     cursor: pointer;
 }
 
