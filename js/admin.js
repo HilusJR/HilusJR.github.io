@@ -95,7 +95,7 @@ function deleteFromArrays(deletedSongId) {
         })
     }
     console.log(chosenSongsFiltered)
-    chosenSongsAmount = chosenSongsFiltered.length
+    chosenSongsAmount = chosenSongsFiltered.length || 0
 
     localStorage.setItem("chosenSongsAmount", chosenSongsAmount)
     localStorage["chosenSongs"] = JSON.stringify(chosenSongsFiltered)

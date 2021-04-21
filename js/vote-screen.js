@@ -15,12 +15,11 @@ function vote() {
     if (document.getElementById("vote-screen-chosen-song-title").innerHTML != "") {
         let votedSongsVotes = []
         chosenSongs = localStorage.getItem("chosenSongs")
-        if (chosenSongs != null) {
-            chosenSongs = JSON.parse(localStorage["chosenSongs"])
-        } else chosenSongs = []
+        chosenSongs = JSON.parse(localStorage["chosenSongs"]) || []
         votedIndex = chosenSongs.findIndex(isEqual);
         votedSongsVotes = localStorage.getItem("votedSongsVotes")
-        if (votedSongsVotes != null) {
+
+        if (votedSongsVotes) {
             votedSongsVotes = JSON.parse(localStorage["votedSongsVotes"])
         } else {
             votedSongsVotes = []
